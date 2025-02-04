@@ -12,6 +12,7 @@
     <header>
       <div class="container">
         <nav>
+           <!-- LOGO -->
           <div class="logo-container">
                     <a href="/" class="logo">
                         <img src="static/Large Logo 1 white.png" alt="Logo" />
@@ -20,8 +21,11 @@
                         <span>PEAK 14</span>
                         <span>SOLUTIONS</span>
                     </div>
-                </div>
+          </div>
+
+           <!-- NAVLINKS -->
           <div class="nav-links">
+            <!-- HOME -->
             <a href="#">
               <svg
                 fill="#ffffff"
@@ -42,6 +46,7 @@
               </svg>
               Home
             </a>
+            <!-- SERVICES -->
             <a href="#">
               <svg
                 fill="#ffffff"
@@ -64,7 +69,24 @@
               </svg>
               Services
             </a>
+            <!-- ABOUT -->
             <a href="#">
+              <svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke-width="0.08">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier"> <title>newspaper</title>
+                      <g id="Layer_2" data-name="Layer 2">
+                          <g id="invisible_box" data-name="invisible box">
+                              <rect width="48" height="48" fill="none"></rect> </g>
+                          <g id="icons_Q2" data-name="icons Q2"> <g> <g> <rect x="30" y="14" width="8" height="4" rx="2" ry="2"></rect>
+                              <rect x="30" y="22" width="8" height="4" rx="2" ry="2"></rect> <rect x="18" y="30" width="20" height="4" rx="2" ry="2"></rect> <rect x="18" y="14" width="8" height="12" rx="1.8" ry="1.8"></rect> </g>
+                              <path d="M44,5H12a2,2,0,0,0-2,2V17H4a2,2,0,0,0-2,2H2V37a6,6,0,0,0,6,6H40a6,6,0,0,0,6-6V7A2,2,0,0,0,44,5ZM6,37V21h4V37a2,2,0,0,1-4,0Zm36,0a2,2,0,0,1-2,2H13.7a6.4,6.4,0,0,0,.3-2V9H42Z"></path>
+                          </g> </g> </g> </g>
+              </svg>
+              About
+            </a>
+            <!-- RESOURCES -->
+              <a href="#">
               <svg
                 fill="#ffffff"
                 width="20px"
@@ -91,6 +113,7 @@
               </svg>
               Resources
             </a>
+            <!-- CONTACT US -->
             <a href="#">
               <svg
                 fill="#ffffff"
@@ -129,6 +152,7 @@
             </div>
         </div>
     </div>
+
 
      <!---  FEATURES SECTION --->
       <div class="features-container">
@@ -184,6 +208,34 @@
           </div>
         </div>
       </div>
+
+     <!--- About Section --->
+
+<section class="team-section">
+  <h2>Meet the Team</h2>
+  <div class="team-carousel" id="teamCarousel">
+    <div class="team-member">
+      <img src="member1.jpg" alt="Member 1">
+      <h3>John Doe</h3>
+      <p>CEO & Founder</p>
+    </div>
+    <div class="team-member">
+      <img src="member2.jpg" alt="Member 2">
+      <h3>Jane Smith</h3>
+      <p>Creative Director</p>
+    </div>
+    <div class="team-member">
+      <img src="member3.jpg" alt="Member 3">
+      <h3>David Lee</h3>
+      <p>Software Engineer</p>
+    </div>
+  </div>
+  <div class="carousel-nav">
+    <button onclick="scrollLeft()">←</button>
+    <button onclick="scrollRight()">→</button>
+  </div>
+</section>
+
     </main>
 
 
@@ -201,6 +253,17 @@
       </div>
     </footer>
 
+    <script>
+        function scrollLeft() {
+        const carousel = document.getElementById('teamCarousel');
+        carousel.scrollLeft -= 350; // Adjust scroll amount as needed
+        }
+
+        function scrollRight() {
+        const carousel = document.getElementById('teamCarousel');
+        carousel.scrollLeft += 350; // Adjust scroll amount as needed
+        }
+    </script>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>

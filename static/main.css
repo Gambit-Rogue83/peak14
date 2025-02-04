@@ -289,6 +289,69 @@ footer {
   margin-top: 40px;
 }
 
+
+/*********************/
+/* ABOUT US SECTION */
+/*******************/
+.team-section {
+  background-color: #f0f0f0; /* Complementary grey background */
+  padding: 40px;
+  text-align: center; /* Center the carousel */
+}
+
+.team-carousel {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snapping for smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.team-member {
+  min-width: 300px; /* Adjust as needed */
+  margin: 0 20px; /* Spacing between members */
+  scroll-snap-align: start; /* Align to the start of the container */
+  padding: 20px;
+  background-color: white; /* White background for member cards */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: left;
+}
+
+.team-member img {
+  width: 150px; /* Adjust image size */
+  height: 150px;
+  border-radius: 50%; /* Circular images */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  color: #215A78; /* Darker green for names */
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  color: #558B71; /* Lighter green for titles/descriptions */
+    font-size: 14px;
+}
+
+/* Optional: Navigation arrows */
+.carousel-nav {
+  margin-top: 20px;
+}
+
+.carousel-nav button {
+  background-color: #558B71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
 /**************************/
 /* Responsive adjustments */
 /*************************/
@@ -343,7 +406,43 @@ footer {
     .feature {
         align-items: center;
     }
+
+    .team-member {
+    min-width: 90%; /* Make each member take almost full width on smaller screens */
+    margin: 10px 0; /* Adjust margins for vertical stacking */
+  }
+
+  .team-carousel {
+    flex-direction: column; /* Stack members vertically */
+    overflow-x: visible; /* Disable horizontal scrolling */
+    scroll-snap-type: none; /* Disable snapping */
+  }
+
+  .carousel-nav {
+    display: none; /* Hide navigation buttons on smaller screens (optional) */
+  }
+
+  .team-section {
+      padding: 20px; /* Reduce padding on smaller screens */
+  }
+
+  .team-member img {
+      width: 100px;
+      height: 100px;
+  }
+
+  .team-member h3 {
+      font-size: 1.2em; /* Slightly larger heading */
+  }
+
+  .team-member p {
+      font-size: 1em; /* Slightly larger paragraph */
+  }
+
 }
+
+
+
 
 
 .dark {
