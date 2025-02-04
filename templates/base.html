@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!--- Base CSS Link --->
+    <link rel="stylesheet" href="static/main.css" />
+    <!--- Additional styles --->
+    {% block link %}{% endblock %}
+
+  </head>
+  <body>
+    <!-- Header with navigation -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" class="logo">
+            <img src="static/Large Logo 1 white.png" alt="Logo" />
+          </a>
+          <div class="nav-links">
+            <a href="#">
+              <svg
+                fill="#ffffff"
+                width="24px"
+                height="24px"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g stroke-width="0"></g>
+                <g stroke-linecap="round" stroke-linejoin="round"></g>
+                <g>
+                  <path
+                    fill-rule="evenodd"
+                    d="M192,0 L384,153.6 L384,384 L213.333333,384 L213.333333,277.333333 L170.666667,277.333333 L170.666667,384 L0,384 L0,153.6 L192,0 Z M192,53.3333333 L42.6666667,170.666667 L42.6666667,341.333333 L128,341.333333 L128,234.666667 L256,234.666667 L256,341.333333 L341.333333,341.333333 L341.333333,170.666667 L192,53.3333333 Z"
+                    transform="translate(64 64)"
+                  ></path>
+                </g>
+              </svg>
+              Home
+            </a>
+            <a href="#">
+              <svg
+                fill="#ffffff"
+                height="20px"
+                width="20px"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#ffffff"
+                stroke-width="0.08"
+              >
+                <g stroke-width="0"></g>
+                <g stroke-linecap="round" stroke-linejoin="round"></g>
+                <g>
+                  <g>
+                    <path
+                      d="M19,24H5v-2h2v-2H0V0h24v20h-7v2h2V24z M9,22h6v-2H9V22z M17,18h5V2H2v16H17z M13,16h-2v-2.1c-0.4-0.1-0.7-0.2-1-0.4L8.5,15l-1.4-1.4l1.5-1.5c-0.2-0.3-0.3-0.7-0.4-1H6v-2h2.1c0.1-0.4,0.2-0.7,0.4-1L7,6.6l1.4-1.4l1.5,1.5c0.3-0.2,0.7-0.3,1-0.4V4h2v2.1c0.4,0.1,0.7,0.2,1,0.4L15.4,5l1.4,1.4L15.4,8c0.2,0.3,0.3,0.7,0.4,1H18v2h-2.1c-0.1,0.4-0.2,0.7-0.4,1l1.5,1.5l-1.4,1.4L14,13.4c-0.3,0.2-0.7,0.3-1,0.4C13,13.8,13,16,13,16z M12,8c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2S13.1,8,12,8z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              Services
+            </a>
+            <a href="#">
+              <svg
+                fill="#ffffff"
+                width="20px"
+                height="20px"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#ffffff"
+                stroke-width="0.08"
+              >
+                <g stroke-width="0"></g>
+                <g
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#CCCCCC"
+                  stroke-width="0.048"
+                ></g>
+                <g>
+                  <g>
+                    <path
+                      d="M12,23L0,17l4.9-2.5L0,12l4.9-2.5L0,7l12-6l12,6l-4.9,2.5L24,12l-4.9,2.5L24,17L12,23z M4.4,17l7.7,3.9l7.6-3.9l-2.8-1.4L12,18l-4.9-2.5L4.4,17z M4.4,12l7.7,3.9l7.6-3.9l-2.8-1.4L12,13.1l-4.9-2.5L4.4,12z M4.4,7l7.7,3.9L19.7,7L12,3.2L4.4,7z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              Resources
+            </a>
+            <a href="#">
+              <svg
+                fill="#ffffff"
+                width="28px"
+                height="28px"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g stroke-width="0"></g>
+                <g stroke-linecap="round" stroke-linejoin="round"></g>
+                <g>
+                  <path
+                    d="M5 24.225V7.776h22v16.447H5v.002zm3.011-1.815h15.978l-5.111-5.115L16 20.179l-2.877-2.883-5.112 5.114zm-1.216-1.275l5.077-5.09-5.077-5.065v10.155zm13.332-5.09l5.079 5.09V10.979l-5.079 5.066zm-4.126 1.588l8.022-8.027-16.045-.001 8.023 8.028z"
+                  ></path>
+                </g>
+              </svg>
+              Contact Us
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      {% block content %}
+      <p>Your content goes here...</p>
+      {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Peak 14 Solutions. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
