@@ -106,6 +106,91 @@ nav {
   transform: scaleX(1);
 }
 
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #215A78; /* Dark blue background */
+  border-radius: 5px;
+  padding: 0; /* Remove extra padding to fix gaps */
+  display: none;
+  flex-direction: column;
+  width: 220px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5); /* Adds depth */
+  transform: translateY(5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  z-index: 10;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+  list-style: none;
+}
+
+/* Styling for dropdown links */
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  color: white; /* Keep text white */
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Remove underline animation from Resources link & dropdown items */
+.no-underline::after,
+.dropdown-menu a::after {
+  display: none !important;
+}
+
+/* Arrow, shifting effect & green background on hover */
+.dropdown-menu a:hover {
+  padding-left: 30px; /* Moves text to the right */
+  background-color: #558B71; /* Background turns green */
+}
+
+/* Ensure first and last items fully turn green */
+.dropdown-menu li:first-child a:hover {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dropdown-menu li:last-child a:hover {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Arrow stays white */
+.dropdown-menu a:hover::before {
+  content: "➤";
+  position: absolute;
+  left: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+/* Ensure dropdown stays above other elements */
+.nav-links {
+  position: relative;
+  z-index: 1000;
+}
+
 /****************/
 /* HERO SECTION */
 /***************/
@@ -294,60 +379,74 @@ footer {
 /* ABOUT US SECTION */
 /*******************/
 .team-section {
-  background-color: #f0f0f0; /* Complementary grey background */
-  padding: 40px;
-  text-align: center; /* Center the carousel */
+  text-align: center;
+  background-color: #D3D3D3; /* Complementary gray */
+  padding: 50px 0;
 }
 
 .team-carousel {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Snapping for smooth scrolling */
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 30px;
+  width: 100%;
+  height: 250px;
 }
 
 .team-member {
-  min-width: 300px; /* Adjust as needed */
-  margin: 0 20px; /* Spacing between members */
-  scroll-snap-align: start; /* Align to the start of the container */
-  padding: 20px;
-  background-color: white; /* White background for member cards */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: left;
+  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.team-member.active {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 2;
 }
 
 .team-member img {
-  width: 150px; /* Adjust image size */
-  height: 150px;
-  border-radius: 50%; /* Circular images */
-  object-fit: cover;
-  margin-bottom: 10px;
+  display: block;
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  border: 3px solid #558B71;
+  transition: border-color 0.3s ease;
 }
 
-.team-member h3 {
-  color: #215A78; /* Darker green for names */
-  margin-bottom: 5px;
+.team-member.active img {
+  border-color: #215A78;
 }
 
-.team-member p {
-  color: #558B71; /* Lighter green for titles/descriptions */
-    font-size: 14px;
+.team-name {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-/* Optional: Navigation arrows */
-.carousel-nav {
-  margin-top: 20px;
-}
-
-.carousel-nav button {
-  background-color: #558B71;
+.carousel-btn {
+  background-color: #215A78;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
+  padding: 10px 15px;
   cursor: pointer;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: #558B71;
 }
 
 
@@ -406,39 +505,6 @@ footer {
     .feature {
         align-items: center;
     }
-
-    .team-member {
-    min-width: 90%; /* Make each member take almost full width on smaller screens */
-    margin: 10px 0; /* Adjust margins for vertical stacking */
-  }
-
-  .team-carousel {
-    flex-direction: column; /* Stack members vertically */
-    overflow-x: visible; /* Disable horizontal scrolling */
-    scroll-snap-type: none; /* Disable snapping */
-  }
-
-  .carousel-nav {
-    display: none; /* Hide navigation buttons on smaller screens (optional) */
-  }
-
-  .team-section {
-      padding: 20px; /* Reduce padding on smaller screens */
-  }
-
-  .team-member img {
-      width: 100px;
-      height: 100px;
-  }
-
-  .team-member h3 {
-      font-size: 1.2em; /* Slightly larger heading */
-  }
-
-  .team-member p {
-      font-size: 1em; /* Slightly larger paragraph */
-  }
-
 }
 
 

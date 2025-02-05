@@ -86,33 +86,32 @@
               About
             </a>
             <!-- RESOURCES -->
-              <a href="#">
-              <svg
-                fill="#ffffff"
-                width="20px"
-                height="20px"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#ffffff"
-                stroke-width="0.08"
-              >
-                <g stroke-width="0"></g>
-                <g
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke="#CCCCCC"
-                  stroke-width="0.048"
-                ></g>
-                <g>
-                  <g>
-                    <path
-                      d="M12,23L0,17l4.9-2.5L0,12l4.9-2.5L0,7l12-6l12,6l-4.9,2.5L24,12l-4.9,2.5L24,17L12,23z M4.4,17l7.7,3.9l7.6-3.9l-2.8-1.4L12,18l-4.9-2.5L4.4,17z M4.4,12l7.7,3.9l7.6-3.9l-2.8-1.4L12,13.1l-4.9-2.5L4.4,12z M4.4,7l7.7,3.9L19.7,7L12,3.2L4.4,7z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-              Resources
-            </a>
+              <div class="nav-links">
+  <!-- RESOURCES -->
+  <div class="dropdown">
+    <a href="#" class="dropdown-toggle no-underline">
+      <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.08">
+        <g stroke-width="0"></g>
+        <g stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g>
+        <g>
+          <g>
+            <path d="M12,23L0,17l4.9-2.5L0,12l4.9-2.5L0,7l12-6l12,6l-4.9,2.5L24,12l-4.9,2.5L24,17L12,23z M4.4,17l7.7,3.9l7.6-3.9l-2.8-1.4L12,18l-4.9-2.5L4.4,17z M4.4,12l7.7,3.9l7.6-3.9l-2.8-1.4L12,13.1l-4.9-2.5L4.4,12z M4.4,7l7.7,3.9L19.7,7L12,3.2L4.4,7z"></path>
+          </g>
+        </g>
+      </svg>
+      Resources
+    </a>
+
+    <!-- Dropdown Menu -->
+    <ul class="dropdown-menu">
+      <li><a href="#">Projects (coming soon)</a></li>
+      <li><a href="#">Blog (coming soon)</a></li>
+      <li><a href="#">FileMaker</a></li>
+      <li><a href="#">Payment Methods</a></li>
+      <li><a href="#">Media</a></li>
+    </ul>
+  </div>
+</div>
             <!-- CONTACT US -->
             <a href="#">
               <svg
@@ -209,32 +208,32 @@
         </div>
       </div>
 
-     <!--- About Section --->
+     <!-- About Section -->
+    <section class="team-section">
+        <h2>Meet the Team</h2>
 
-<section class="team-section">
-  <h2>Meet the Team</h2>
-  <div class="team-carousel" id="teamCarousel">
-    <div class="team-member">
-      <img src="member1.jpg" alt="Member 1">
-      <h3>John Doe</h3>
-      <p>CEO & Founder</p>
-    </div>
-    <div class="team-member">
-      <img src="member2.jpg" alt="Member 2">
-      <h3>Jane Smith</h3>
-      <p>Creative Director</p>
-    </div>
-    <div class="team-member">
-      <img src="member3.jpg" alt="Member 3">
-      <h3>David Lee</h3>
-      <p>Software Engineer</p>
-    </div>
-  </div>
-  <div class="carousel-nav">
-    <button onclick="scrollLeft()">←</button>
-    <button onclick="scrollRight()">→</button>
-  </div>
-</section>
+        <div class="team-carousel">
+            <button class="carousel-btn prev-btn" onclick="prevMember()">&lt;</button>
+
+            <div class="team-wrapper">
+                <div class="team-member active">
+                    <img src="static/tim.jpg" alt="Tim Jerris">
+                        <p class="team-name">Tim Jerris</p>
+                </div>
+                <div class="team-member">
+                    <img src="static/jack.jpg" alt="Jack Watcher">
+                    <p class="team-name">Jack Watcher</p>
+                </div>
+                <div class="team-member">
+                    <img src="static/jane.jpg" alt="Jane Austin">
+                    <p class="team-name">Jane Austin</p>
+                </div>
+            </div>
+
+            <button class="carousel-btn next-btn" onclick="nextMember()">&gt;</button>
+        </div>
+    </section>
+
 
     </main>
 
@@ -254,15 +253,26 @@
     </footer>
 
     <script>
-        function scrollLeft() {
-        const carousel = document.getElementById('teamCarousel');
-        carousel.scrollLeft -= 350; // Adjust scroll amount as needed
+        let currentIndex = 0;
+        const members = document.querySelectorAll(".team-member");
+
+        function updateCarousel() {
+            members.forEach((member, index) => {
+            member.classList.toggle("active", index === currentIndex);
+            });
         }
 
-        function scrollRight() {
-        const carousel = document.getElementById('teamCarousel');
-        carousel.scrollLeft += 350; // Adjust scroll amount as needed
+        function prevMember() {
+            currentIndex = (currentIndex === 0) ? members.length - 1 : currentIndex - 1;
+            updateCarousel();
         }
+
+        function nextMember() {
+            currentIndex = (currentIndex === members.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        }
+
+        updateCarousel();
     </script>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
