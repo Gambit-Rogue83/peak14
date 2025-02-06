@@ -17,37 +17,16 @@
                     <a href="/" class="logo">
                         <img src="static/Large Logo 1 white.png" alt="Logo" />
                     </a>
-                    <div class="branding">
+                    <a href="/" class="branding">
                         <span>PEAK 14</span>
                         <span>SOLUTIONS</span>
-                    </div>
+                    </a>
           </div>
 
            <!-- NAVLINKS -->
           <div class="nav-links">
-            <!-- HOME -->
-            <a href="#">
-              <svg
-                fill="#ffffff"
-                width="24px"
-                height="24px"
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g stroke-width="0"></g>
-                <g stroke-linecap="round" stroke-linejoin="round"></g>
-                <g>
-                  <path
-                    fill-rule="evenodd"
-                    d="M192,0 L384,153.6 L384,384 L213.333333,384 L213.333333,277.333333 L170.666667,277.333333 L170.666667,384 L0,384 L0,153.6 L192,0 Z M192,53.3333333 L42.6666667,170.666667 L42.6666667,341.333333 L128,341.333333 L128,234.666667 L256,234.666667 L256,341.333333 L341.333333,341.333333 L341.333333,170.666667 L192,53.3333333 Z"
-                    transform="translate(64 64)"
-                  ></path>
-                </g>
-              </svg>
-              Home
-            </a>
             <!-- SERVICES -->
-            <a href="#">
+            <a href="javascript:void(0)" onclick="scrollToSection('features')">
               <svg
                 fill="#ffffff"
                 height="20px"
@@ -70,7 +49,7 @@
               Services
             </a>
             <!-- ABOUT -->
-            <a href="#">
+            <a href="javascript:void(0)" onclick="scrollToSection('team')">
               <svg width="24px" height="24px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke-width="0.08">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                   <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -104,16 +83,16 @@
 
     <!-- Dropdown Menu -->
     <ul class="dropdown-menu">
-      <li><a href="#">Projects (coming soon)</a></li>
-      <li><a href="#">Blog (coming soon)</a></li>
-      <li><a href="#">FileMaker</a></li>
-      <li><a href="#">Payment Methods</a></li>
-      <li><a href="#">Media</a></li>
+      <li><a href="/resources/projects">Projects</a></li>
+      <li><a href="/resources/blog">Blog</a></li>
+      <li><a href="/resources/filemaker">FileMaker</a></li>
+      <li><a href="/resources/payment">Payment Methods</a></li>
+      <li><a href="/resources/media">Media</a></li>
     </ul>
   </div>
 </div>
             <!-- CONTACT US -->
-            <a href="#">
+            <a href="javascript:void(0)" onclick="scrollToSection('contact')">
               <svg
                 fill="#ffffff"
                 width="28px"
@@ -146,15 +125,25 @@
                 Experience the power of seamless, custom FileMaker applications.
             </p>
             <div class="button-group">
-                <button class="btn primary-btn">Get Started Now</button>
-                <button class="btn secondary-btn">Learn More</button>
+                <button class="btn primary-btn" onclick="scrollToSection('contact')">Get Started Now</button>
+                <button class="btn secondary-btn" onclick="scrollToSection('features')">Learn More</button>
             </div>
         </div>
     </div>
 
+    <div id="scrollToTop" class="arrow-container" onclick="scrollToTop()">
+    <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <g data-name="Layer 2">
+        <g data-name="arrow-ios-upward">
+          <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+          <path d="M18 15a1 1 0 0 1-.64-.23L12 10.29l-5.37 4.32a1 1 0 0 1-1.41-.15 1 1 0 0 1 .15-1.41l6-4.83a1 1 0 0 1 1.27 0l6 5a1 1 0 0 1 .13 1.41A1 1 0 0 1 18 15z"></path>
+        </g>
+      </g>
+    </svg>
+  </div>
 
      <!---  FEATURES SECTION --->
-      <div class="features-container">
+      <div class="features-section" id="features">
         <h2 class="section-title">Features with title</h2>
 
         <div class="features-row">
@@ -164,7 +153,7 @@
             <p class="features-description">
                 Our team of experts specializes in developing innovative strategies to help you navigate your specific hurdles and reach your peak.  Ready to find your solution?
             </p>
-            <button class="btn primary-btn">Get In Touch!</button>
+            <button class="btn primary-btn" onclick="scrollToSection('contact')">Get In Touch!</button>
           </div>
 
           <!-- Right Column -->
@@ -234,8 +223,25 @@
         </div>
     </section>
 
+    <!-- CONTACT US -->
+    <section class="contact-section">
+        <div class="contact-form">
+            <div class="header header-raised header-primary text-center">
+            <h2 class="card-title">Contact Us</h2>
+            </div>
+            <form action="/submit-form" method="POST">
+                <input type="text" name="name" placeholder="Your Name*" required>
+                <input type="email" name="email" placeholder="Your Email*" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
 
     </main>
+
+
 
 
 
@@ -252,6 +258,28 @@
       </div>
     </footer>
 
+
+
+    <script>
+    function scrollToSection(sectionId) {
+    document.querySelector(`.${sectionId}-section`).scrollIntoView({ behavior: "smooth" });
+}
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.getElementById("scrollToTop").style.display = "none";
+    }
+
+    window.addEventListener("scroll", function() {
+      const featuresSection = document.getElementById("features");
+      const arrow = document.getElementById("scrollToTop");
+      if (featuresSection.getBoundingClientRect().top <= 0) {
+        arrow.style.display = "flex";
+      } else {
+        arrow.style.display = "none";
+      }
+    });
+  </script>
     <script>
         let currentIndex = 0;
         const members = document.querySelectorAll(".team-member");

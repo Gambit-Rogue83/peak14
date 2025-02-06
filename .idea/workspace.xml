@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Services polishing, Meet the Team">
-      <change afterPath="$PROJECT_DIR$/templates/experiment.html" afterDir="false" />
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Meet the Team Carousel, Drop down menu,">
+      <change afterPath="$PROJECT_DIR$/templates/resources.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/resources.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/experiment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/experiment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738711271888</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Meet the Team Carousel, Drop down menu,">
+      <option name="closed" value="true" />
+      <created>1738798571741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738798571741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +110,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nav Bar, Hero Section, Featured Services, Footer" />
     <MESSAGE value="Services polishing, Meet the Team" />
-    <option name="LAST_COMMIT_MESSAGE" value="Services polishing, Meet the Team" />
+    <MESSAGE value="Meet the Team Carousel, Drop down menu," />
+    <option name="LAST_COMMIT_MESSAGE" value="Meet the Team Carousel, Drop down menu," />
   </component>
 </project>

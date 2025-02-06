@@ -58,10 +58,13 @@ nav {
   display: flex;
   flex-direction: column;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.0;
+  letter-spacing: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* Navigation Links */
@@ -191,6 +194,38 @@ nav {
   z-index: 1000;
 }
 
+
+/*****************/
+/* SCROLL TO TOP */
+/****************/
+.arrow-container {
+  display: none;
+  position: fixed;
+  bottom: 25%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  background: gray;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.arrow-container:hover {
+  transform: translateY(-5px);
+}
+.arrow-container svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+
 /****************/
 /* HERO SECTION */
 /***************/
@@ -239,14 +274,14 @@ nav {
 
 /* Primary Button */
 .primary-btn {
-  background-color: #558B71;
+  background-color: #215A78;
   color: white;
   margin-right: 20px; /* Space between buttons */
   border: 2px solid transparent;
 }
 
 .primary-btn:hover {
-  background-color: #215A78;
+  background-color: #558B71;
   border: 2px solid white; /* White border */
   transform: scale(1.1);
 }
@@ -274,8 +309,7 @@ nav {
 /********************/
 /* FEATURES SECTION */
 /*******************/
-/* Features Section */
-.features-container {
+.features-section {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -340,7 +374,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #215A78;
+    background: #558B71;
     border-radius: 10px;
     padding: 10px;
 }
@@ -371,7 +405,6 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-  margin-top: 40px;
 }
 
 
@@ -381,6 +414,7 @@ footer {
 .team-section {
   text-align: center;
   background-color: #D3D3D3; /* Complementary gray */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   padding: 50px 0;
 }
 
@@ -449,6 +483,68 @@ footer {
   background-color: #558B71;
 }
 
+
+/********************/
+/* CONTACT US FORM */
+/*******************/
+.contact-section {
+  background-image: url('https://peak14.solutions/wp-content/uploads/2020/04/Mt._Elbert_Colorado-scaled.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(162, 189, 180, 1);
+  background-blend-mode: multiply;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #558B71;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+.contact-form button:hover {
+  background-color: #446b58;
+}
+
+.contact-section .header {
+  background-color: #558B71; /* Teal background */
+  padding: 20px 0; /* Add some padding top and bottom */
+  margin-bottom: 20px; /* Space between header and form */
+  position: relative; /* Needed for absolute positioning of h2 */
+  top: -50%; /* Moves the header up by 50% of its height */
+  transform: translateY(-50%); /* Centers the header vertically */
+  border-radius: 5px;
+}
+
+.contact-section .header h2 {
+  color: white; /* White text */
+  text-align: center; /* Centers the text horizontally */
+  margin: 0; /* Remove default h2 margins */
+}
 
 
 /**************************/

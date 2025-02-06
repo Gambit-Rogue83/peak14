@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources</title>
+    <!--- Base CSS Link --->
+    <link rel="stylesheet" href="static/resources.css" />
+  </head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+      <div class="container">
+        <nav>
+           <!-- LOGO -->
+          <div class="logo-container">
+                    <a href="/" class="logo">
+                        <img src="static/Large Logo 1 white.png" alt="Logo" />
+                    </a>
+                    <a href="/" class="branding">
+                        <span>PEAK 14</span>
+                        <span>SOLUTIONS</span>
+                    </a>
+          </div>
+
+           <!-- NAVLINKS -->
+          <div class="nav-links">
+            <!-- RESOURCES -->
+              <div class="nav-links">
+  <div class="dropdown">
+    <a href="#" class="dropdown-toggle no-underline">
+      <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.08">
+        <g stroke-width="0"></g>
+        <g stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g>
+        <g>
+          <g>
+            <path d="M12,23L0,17l4.9-2.5L0,12l4.9-2.5L0,7l12-6l12,6l-4.9,2.5L24,12l-4.9,2.5L24,17L12,23z M4.4,17l7.7,3.9l7.6-3.9l-2.8-1.4L12,18l-4.9-2.5L4.4,17z M4.4,12l7.7,3.9l7.6-3.9l-2.8-1.4L12,13.1l-4.9-2.5L4.4,12z M4.4,7l7.7,3.9L19.7,7L12,3.2L4.4,7z"></path>
+          </g>
+        </g>
+      </svg>
+      Resources
+    </a>
+
+    <!-- Dropdown Menu -->
+    <ul class="dropdown-menu">
+      <li><a href="/resources/projects">Projects</a></li>
+      <li><a href="/resources/blogs">Blog</a></li>
+      <li><a href="/resources/filemaker">FileMaker</a></li>
+      <li><a href="/resources/payment">Payment Methods</a></li>
+      <li><a href="/resources/media">Media</a></li>
+    </ul>
+  </div>
+</div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Popout Sections (Only show the requested one) -->
+    <div class="popout-box" id="projects-box" {% if section == 'projects' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+        Projects content coming soon...
+    </div>
+
+    <div class="popout-box" id="blogs-box" {% if section == 'blogs' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+        Blogs content coming soon...
+    </div>
+
+    <div class="popout-box" id="filemaker-box" {% if section == 'filemaker' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+        FileMaker solutions and guides...
+    </div>
+
+    <div class="popout-box" id="payment-box" {% if section == 'payment' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+        Secure payment methods...
+    </div>
+
+    <div class="popout-box" id="media-box" {% if section == 'media' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
+        Our media and case studies...
+    </div>
+
+</body>
+</html>
