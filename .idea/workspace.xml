@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Meet the Team Carousel, Drop down menu,">
-      <change afterPath="$PROJECT_DIR$/templates/resources.html" afterDir="false" />
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Contact Us, Footer (flushed), Logo Text, Active a-links">
+      <change afterPath="$PROJECT_DIR$/static/facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/linkedin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/try.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/resources.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/resources.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/resources.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/experiment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/experiment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/resources.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resources.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,19 +37,22 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2sXOgfCdR99w5Nvnc8LocCSMtXi" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nynys\PycharmProjects\peak14 webpage\static" />
@@ -93,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738798571741</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Contact Us, Footer (flushed), Logo Text, Active a-links">
+      <option name="closed" value="true" />
+      <created>1738880575936</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738880575937</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,9 +123,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Nav Bar, Hero Section, Featured Services, Footer" />
     <MESSAGE value="Services polishing, Meet the Team" />
     <MESSAGE value="Meet the Team Carousel, Drop down menu," />
-    <option name="LAST_COMMIT_MESSAGE" value="Meet the Team Carousel, Drop down menu," />
+    <MESSAGE value="Contact Us, Footer (flushed), Logo Text, Active a-links" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact Us, Footer (flushed), Logo Text, Active a-links" />
   </component>
 </project>

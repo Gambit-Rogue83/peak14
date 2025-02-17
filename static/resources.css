@@ -11,7 +11,6 @@ body {
   font-family: sans-serif;
   line-height: 1.6;
   color: #333;
-  background-image: url('https://peak14.solutions/wp-content/uploads/2020/04/Mount_Meeker_and_Longs_Peak.jpg')
 }
 
 /* Container for consistent width */
@@ -196,14 +195,49 @@ nav {
 }
 
 
+/****************/
+/* HERO SECTION */
+/***************/
+.resource-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Text aligned left */
+  height: 100vh;
+  width: 100vw;
+  background: url('https://peak14.solutions/wp-content/uploads/2020/04/Mount_Meeker_and_Longs_Peak.jpg') no-repeat center center/cover;
+  background-position: 0% 25%; /* background image */
+  color: white;
+  padding-left: 5%;
+  position: relative;
+}
+
+/* Hero Content */
+.resource-content {
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Hero Title */
+.resource-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Hero Description */
+.resource-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
 
 
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-section {
-        justify-content: center; /* Center content on smaller screens */
-        text-align: center;
-        padding: 0 2rem;
-    }
+/**********/
+/* Footer */
+/*********/
+footer {
+  background-color: #215A78;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }

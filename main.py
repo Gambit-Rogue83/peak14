@@ -10,6 +10,7 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+
 @app.route('/submit-form', methods=['POST'])
 def submit_form():
     name = request.form.get("name")
@@ -25,14 +26,9 @@ def submit_form():
     return "Message Sent Successfully!"
 
 
-@app.route('/resources/<section>')
-def resources(section):
-    valid_sections = ["projects", "blogs", "filemaker", "payment", "media"]
-
-    if section not in valid_sections:
-        return render_template("resources.html")
-
-    return render_template("resources.html", section=section)
+@app.route('/resources.html')
+def resources():
+    return render_template("resources.html")
 
 
 def send_email(subject, body):
@@ -49,6 +45,9 @@ def send_email(subject, body):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(sender_email, password)
         server.send_message(msg)
+
+
+
 
 
 if __name__ == '__main__':

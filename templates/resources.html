@@ -1,81 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Resources</title>
     <!--- Base CSS Link --->
-    <link rel="stylesheet" href="static/resources.css" />
-  </head>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet"/>
+</head>
 <body>
-    <!-- Header with navigation -->
-    <header>
-      <div class="container">
+<!-- Header with navigation -->
+<header>
+    <div class="container">
         <nav>
-           <!-- LOGO -->
-          <div class="logo-container">
-                    <a href="/" class="logo">
-                        <img src="static/Large Logo 1 white.png" alt="Logo" />
-                    </a>
-                    <a href="/" class="branding">
-                        <span>PEAK 14</span>
-                        <span>SOLUTIONS</span>
-                    </a>
-          </div>
+            <!-- LOGO -->
+            <div class="logo-container">
+                <a class="logo" href="/">
+                    <img alt="Logo" src="{{ url_for('static', filename='Large Logo 1 white.png') }}"/>
+                </a>
+                <a class="branding" href="/">
+                    <span>PEAK 14</span>
+                    <span>SOLUTIONS</span>
+                </a>
+            </div>
 
-           <!-- NAVLINKS -->
-          <div class="nav-links">
-            <!-- RESOURCES -->
-              <div class="nav-links">
-  <div class="dropdown">
-    <a href="#" class="dropdown-toggle no-underline">
-      <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.08">
-        <g stroke-width="0"></g>
-        <g stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g>
-        <g>
-          <g>
-            <path d="M12,23L0,17l4.9-2.5L0,12l4.9-2.5L0,7l12-6l12,6l-4.9,2.5L24,12l-4.9,2.5L24,17L12,23z M4.4,17l7.7,3.9l7.6-3.9l-2.8-1.4L12,18l-4.9-2.5L4.4,17z M4.4,12l7.7,3.9l7.6-3.9l-2.8-1.4L12,13.1l-4.9-2.5L4.4,12z M4.4,7l7.7,3.9L19.7,7L12,3.2L4.4,7z"></path>
-          </g>
-        </g>
-      </svg>
-      Resources
-    </a>
+            <!-- NAVLINKS -->
+            <div class="nav-links">
+                <!-- HOME -->
+                <a href="/">
+                    <svg
+                            fill="#ffffff"
+                            height="24px"
+                            viewBox="0 0 512 512"
+                            width="24px"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g stroke-width="0"></g>
+                        <g stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g>
+                            <path
+                                    d="M192,0 L384,153.6 L384,384 L213.333333,384 L213.333333,277.333333 L170.666667,277.333333 L170.666667,384 L0,384 L0,153.6 L192,0 Z M192,53.3333333 L42.6666667,170.666667 L42.6666667,341.333333 L128,341.333333 L128,234.666667 L256,234.666667 L256,341.333333 L341.333333,341.333333 L341.333333,170.666667 L192,53.3333333 Z"
+                                    fill-rule="evenodd"
+                                    transform="translate(64 64)"
+                            ></path>
+                        </g>
+                    </svg>
+                    Home
+                </a>
+                <!-- RESOURCES -->
+                <div class="dropdown">
+                    <a class="dropdown-toggle no-underline" href="#">
+                        <svg fill="#ffffff" height="20px" stroke="#ffffff" stroke-width="0.08"
+                             viewBox="0 0 24 24" width="20px" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke-width="0"></g>
+                            <g stroke="#CCCCCC" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.048"></g>
+                            <g>
+                                <g>
+                                    <path d="M12,23L0,17l4.9-2.5L0,12l4.9-2.5L0,7l12-6l12,6l-4.9,2.5L24,12l-4.9,2.5L24,17L12,23z M4.4,17l7.7,3.9l7.6-3.9l-2.8-1.4L12,18l-4.9-2.5L4.4,17z M4.4,12l7.7,3.9l7.6-3.9l-2.8-1.4L12,13.1l-4.9-2.5L4.4,12z M4.4,7l7.7,3.9L19.7,7L12,3.2L4.4,7z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        Resources
+                    </a>
 
-    <!-- Dropdown Menu -->
-    <ul class="dropdown-menu">
-      <li><a href="/resources/projects">Projects</a></li>
-      <li><a href="/resources/blogs">Blog</a></li>
-      <li><a href="/resources/filemaker">FileMaker</a></li>
-      <li><a href="/resources/payment">Payment Methods</a></li>
-      <li><a href="/resources/media">Media</a></li>
-    </ul>
-  </div>
-</div>
-          </div>
+                    <!-- Dropdown Menu -->
+                    <ul class="dropdown-menu">
+                        <li><a href="/resources.html?resource=samples">Samples</a></li>
+                        <li><a href="/resources.html?resource=filemaker">FileMaker</a></li>
+                        <li><a href="/resources.html?resource=payment">Payment Methods</a></li>
+                        <li><a href="/resources.html?resource=media">Media</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-      </div>
-    </header>
-
-    <!-- Popout Sections (Only show the requested one) -->
-    <div class="popout-box" id="projects-box" {% if section == 'projects' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
-        Projects content coming soon...
     </div>
+</header>
+<!-- Main Content -->
+<main>
+    <div class="resource-section">
+        <!-- SAMPLES -->
+        <div class="resource-overlay" id="samples">
+            <div class="resource-content">
+                <span class="close-overlay">&times;</span>
+                <div class="sample-content-wrapper"><img class="sample-image" src="static/Sample1.jpg">
+                    <div class="sample-text">
+                        <h2>Happy Salmon, Inc.</h2>
+                        <p class="sample-quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum."</p>
+                        <p class="sample-author"> -- John McClane -- </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="popout-box" id="blogs-box" {% if section == 'blogs' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
-        Blogs content coming soon...
+        <!-- FILEMAKER -->
+        <div class="resource-overlay" id="filemaker">
+            <div class="resource-content">
+                <span class="close-overlay">&times;</span>
+                <h2>Learning Videos:</h2>
+                <br><br>
+                <a href="https://www.youtube.com/channel/UC92MpDPgdr-xEn3JRUAmZOQ"> ISO FileMaker Magazine </a>
+                <ul>
+                    <li>Great to learn intermediate materials</li>
+                </ul>
+                <a href="https://www.youtube.com/user/FileMakerVideos"> FileMaker Training Videos </a>
+                <ul>
+                    <li> Great to learn beginning materials</li>
+                </ul>
+                <a href="https://www.youtube.com/channel/UCXp4kolYmlCJacKmBd1zYoA"> FileMaker Beginner </a>
+                <ul>
+                    <li>Great to learn the basics of how FileMaker works</li>
+                </ul>
+                <a href="https://www.linkedin.com/learning/filemaker-relational-database-design"> Relational
+                    Database Design Online Class </a>
+                <ul>
+                    <li> Free for first month if you sign up</li>
+                    <li> Good for understanding how the relationship graph works and how to utilize it</li>
+                </ul>
+                <a href="https://www.linkedin.com/learning/filemaker-pro-essential-training-2"> FileMaker Essential
+                    Online Class </a>
+                <ul>
+                    <li> Free for first month if you sign up</li>
+                    <li> Good for a basic overview of FileMaker</li>
+                </ul>
+                <br><br><br>
+                <h2> Documentation </h2>
+                <ul>
+                    <li><a href="https://help.claris.com/en/pro-help/content/index.html">Version 19</a></li>
+                    <ul>
+                        <li><a href="https://help.claris.com/en/pro-help/content/new-features.html">New Features</a>
+                        </li>
+                        <ul>
+                            <li>
+                                <a href="https://help.claris.com/en/pro-help/content/perform-javascript-in-web-viewer.html">Perform
+                                    JavaScript in Web Viewer </a> - New Script Step
+                            </li>
+                            <li> Web Viewers now use Microsoft Edge instead of Internet Explorer on Windows</li>
+                            <li> Can now use bracket notation for key/value pairs with JSON functions</li>
+                            <li> FileMaker Server now has a Linux Version!</li>
+                        </ul>
+                        <li>
+                            <a href="https://support.claris.com/s/article/Claris-FileMaker-19-Technical-Specifications?language=en_US">
+                                Specifications </a></li>
+                        <ul>
+                            <li>Doesn't support Windows 7</li>
+                        </ul>
+                    </ul>
+                    <li><a href="https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help%2Findex.html">Version
+                        18</a></li>
+                    <ul>
+                        <li>
+                            <a href="https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help/new-features.html">Main
+                                New Features</a></li>
+                        <ul>
+                            <li><a href="https://www.claris.com/filemaker/cloud/">FileMaker Cloud</a></li>
+                            <li>
+                                <a href="https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help%2Ffiles-script-steps.html%23">Date
+                                    File Script Steps</a></li>
+                        </ul>
+                        <li>
+                            <a href="https://support.claris.com/s/article/System-Requirements-for-FileMaker-Pro-18-Advanced?language=en_US">Specifications</a>
+                        </li>
+                    </ul>
+                    <li><a href="https://fmhelp.filemaker.com/help/17/fmp/en/index.html#page/FMP_Help%2Findex.html">Version
+                        17</a></li>
+                    <ul>
+                        <li>
+                            <a href="https://fmhelp.filemaker.com/help/17/fmp/en/index.html#page/FMP_Help/new-features.html">New
+                                Features</a></li>
+                        <ul>
+                            <li>Get(UUIDNumber) - New Function</li>
+                        </ul>
+                        <li>
+                            <a href="https://support.claris.com/s/article/System-Requirements-for-FileMaker-Pro-17-Advanced?language=en_US">Specifications</a>
+                        </li>
+                    </ul>
+                    <li><a href="https://fmhelp.filemaker.com/help/16/fmp/en/index.html#page/FMP_Help%2Findex.html">Version
+                        16</a></li>
+                    <ul>
+                        <li>
+                            <a href="https://fmhelp.filemaker.com/help/16/fmp/en/index.html#page/FMP_Help/new-features.html">New
+                                Features</a></li>
+                        <ul>
+                            <li>
+                                <a href="https://fmhelp.filemaker.com/help/16/fmp/en/index.html#page/FMP_Help/json-functions.html#wwconnect_header">JSON
+                                    Functions</a></li>
+                            <li>
+                                <a href="https://fmhelp.filemaker.com/help/16/fmp/en/index.html#page/FMP_Help/authenticate-identity-provider.html#wwconnect_header">OAuth/External
+                                    Login Features</a></li>
+                        </ul>
+                        <li> Specifications - (link broken)</li>
+                    </ul>
+                </ul>
+                <br><br>
+
+                <h2> Asking Questions</h2>
+                <a href="https://www.facebook.com/groups/filemakerdevs"> FileMaker Pro Users/Developers (Facebook
+                    Group) </a>
+                <ul>
+                    <li>Good for quick replies</li>
+                </ul>
+                <a href="http://community.claris.com/"> Claris Community (online forum)</a>
+                <ul>
+                    <li> Good for in-depth answers</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PAYMENT METHODS -->
+        <div class="resource-overlay" id="payment">
+            <div class="resource-content">
+                <span class="close-overlay">&times;</span>
+                <p class="intro-paragraph">Below are several easy ways to make payments to Peak 14 Solutions LLC.</p>
+                <p class="intro-paragraph">Preferred payment methods are ACH Bank Transfer or Zelle.</p><br>
+
+                <div class="payment-methods-container">
+                    <div class="payment-method">
+                        <h2>Zelle</h2>
+                        <figure>
+                            <a href="https://www.zellepay.com/" target="_blank">
+                                <img alt="" class="payment-icon"
+                                     src="https://peak14.solutions/wp-content/uploads/2021/12/zelle.png"
+                                     width="100">
+                            </a>
+                        </figure>
+                        <p class="payment-link"><a href="https://www.zellepay.com/" target="_blank">Zelle Pay</a></p>
+                        <p class="payment-info">Use paul@peak14.solutions</p>
+                    </div>
+
+                    <div class="payment-method">
+                        <h2>PayPal</h2>
+                        <figure>
+                            <a href="https://www.paypal.com/paypalme/pmccudden" target="_blank">
+                                <img alt="PayPal Icon" class="payment-icon"
+                                     src="https://peak14.solutions/wp-content/uploads/2020/04/FAVPNG_paypal-logo-payment-system_Z4vDjLxC.png"
+                                     width="100">
+                            </a>
+                        </figure>
+                        <p class="payment-link"><a href="https://www.paypal.com/paypalme/peak14LLC" target="_blank">PayPal</a>
+                        </p>
+                        <p class="payment-info">General Request Link</p>
+                    </div>
+
+                    <div class="payment-method">
+                        <h2>Venmo</h2>
+                        <figure>
+                            <a href="https://venmo.com/code?user_id=2570153912958976893" target="_blank">
+                                <img alt="Venmo Icon" class="payment-icon"
+                                     src="https://peak14.solutions/wp-content/uploads/2020/04/app-icon.original.png"
+                                     width="100">
+                            </a>
+                        </figure>
+                        <p class="payment-link"><a href="https://venmo.com/code?user_id=2570153912958976893"
+                                                   rel="noreferrer noopener" target="_blank">Venmo</a></p>
+                        <p class="payment-info">Profile Link</p>
+                    </div>
+
+                    <div class="payment-method">
+                        <h2>Check</h2>
+                        <figure>
+                            <a href="https://www.huntington.com/learn/checking-basics/how-to-write-a-check"
+                               target="_blank">
+                                <img alt="" class="payment-icon"
+                                     src="https://peak14.solutions/wp-content/uploads/2021/03/checkbook.png"
+                                     width="100">
+                            </a>
+                        </figure>
+                        <p class="payment-link"><a
+                                href="https://www.huntington.com/learn/checking-basics/how-to-write-a-check"
+                                target="_blank">Check</a>
+                        </p>
+                        <p class="payment-info">Use invoice information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MEDIA -->
+        <div class="resource-overlay" id="media">
+            <div class="resource-content">
+                <span class="close-overlay">×</span>
+                <h2>Media</h2>
+            </div>
+        </div>
     </div>
+</main>
 
-    <div class="popout-box" id="filemaker-box" {% if section == 'filemaker' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
-        FileMaker solutions and guides...
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <svg fill="#ffffff" height="24px" id="Uploaded to svgrepo.com"
+                     stroke="#ffffff" version="1.1" viewBox="0 0 32 32" width="24px"
+                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> <style
+                            type="text/css"> .sharpcorners_een{fill:#ffffff;} .st0{fill:#ffffff;} </style>
+                        <path class="sharpcorners_een"
+                              d="M12,14H8v-4c0-4.411,3.589-8,8-8s8,3.589,8,8v4h-4v-4c0-2.206-1.794-4-4-4s-4,1.794-4,4V14z M28,15v15H4V15H28z M18,20h-4v3h1v2h2v-2h1V20z"></path> </g></svg>
+                <a href="#" id="privacy-link"> PRIVACY POLICY </a>
+            </div>
+            <div class="footer-center">
+                <p>&copy; <span id="year"></span> Peak 14 Solutions. All Rights Reserved.</p>
+                <p>
+                <div class="dark">Icons by
+                    <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">➤</a></div>
+                </p>
+            </div>
+            <div class="footer-right">
+                <p>1906 Dorset Dr.<br>
+                    Fort Collins, CO 80526</p>
+            </div>
+        </div>
     </div>
+</footer>
 
-    <div class="popout-box" id="payment-box" {% if section == 'payment' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
-        Secure payment methods...
+
+<div id="privacy-overlay">
+    <div class="privacy-content">
+        <h2>Privacy Policy</h2><br><br>
+        <p>Last updated: April 14, 2020</p><br>
+        <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your
+            information when You use the Service and tells You about Your privacy rights and how the law protects
+            You.</p>
+        <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the
+            collection and use of information in accordance with this Privacy Policy.</p><br><br>
+        <h2> Interpretation and Definitions</h2><br>
+        <h3> Interpretation</h3><br>
+        <p>The words of which the initial letter is capitalized have meanings defined under the following
+            conditions.</p>
+        <p>The following definitions shall have the same meaning regardless of whether they appear in singular or in
+            plural.</p><br><br>
+        <h3>Definitions</h3><br>
+        <p>For the purposes of this Privacy Policy:</p><br>
+        <ul>
+            <li>You means the individual accessing or using the Service, or the company, or other legal entity on behalf
+                of which such individual is accessing or using the Service, as applicable.
+            </li>
+            <li>Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Agreement) refers to Peak 14
+                Solutions LLC, 206 Barcelona Dr.
+            </li>
+            <li>Affiliate means an entity that controls, is controlled by or is under common control with a party, where
+                “control” means ownership of 50% or more of the shares, equity interest or other securities entitled to
+                vote for election of directors or other managing authority.
+            </li>
+            <li>Account means a unique account created for You to access our Service or parts of our Service.</li>
+            <li>Website refers to Peak14 Solutions, accessible from www.peak14.solutions</li>
+            <li>Service refers to the Website.</li>
+            <li>Country refers to: Colorado, United States</li>
+            <li>Service Provider means any natural or legal person who processes the data on behalf of the Company. It
+                refers to third-party companies or individuals employed by the Company to facilitate the Service, to
+                provide the Service on behalf of the Company, to perform services related to the Service or to assist
+                the Company in analyzing how the Service is used.
+            </li>
+            <li>Third-party Social Media Service refers to any website or any social network website through which a
+                User can log in or create an account to use the Service.
+            </li>
+            <li>Personal Data is any information that relates to an identified or identifiable individual.</li>
+            <li>Cookies are small files that are placed on Your computer, mobile device or any other device by a
+                website, containing the details of Your browsing history on that website among its many uses.
+            </li>
+            <li>Usage Data refers to data collected automatically, either generated by the use of the Service or from
+                the Service infrastructure itself (for example, the duration of a page visit).
+            </li>
+        </ul>
+        <br><br>
+        <h2>Collecting and Using Your Personal Data</h2><br>
+        <h3>Types of Data Collected</h3><br>
+        <h4>Personal Data</h4><br>
+        <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that
+            can be used to contact or identify You.
+            Personally identifiable information may include, but is not limited to:</p><br>
+        <ul>
+            <li>Email address</li>
+            <li>First name and last name</li>
+            <li>Usage Data</li>
+        </ul>
+        <br><br>
+        <h4>Usage Data</h4><br>
+        <p>Usage Data is collected automatically when using the Service.</p>
+        <p>Usage Data may include information such as Your Device’s Internet Protocol address (e.g. IP address), browser
+            type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time
+            spent on
+            those pages, unique device identifiers and other diagnostic data.</p>
+        <p>When You access the Service by or through a mobile device, We may collect certain information automatically,
+            including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP
+            address
+            of Your mobile device You use, Your mobile device unique ID, the IP address of Your browser You use, unique
+            device identifiers and other diagnostic data.</p>
+        <p>We may also collect information that Your browser sends whenever You visit our Service or when You access the
+            Service by or through a mobile device.</p><br><br>
+        <h3 class="wp-block-heading">Tracking Technologies and Cookies</h3><br>
+        <p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain
+            information. Tracking technologies used are beacons, tags, and scripts to collect and track information and
+            to improve and analyze Our Service.</p>
+        <p>You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However,
+            if You do not accept Cookies, You may not be able to use some parts of our Service.</p>
+        <p>Cookies can be “Persistent” or “Session” Cookies. Persistent Cookies remain on your personal computer or
+            mobile device when You go offline, while Session Cookies are deleted as soon as You close your web browser.
+            Learn more about cookies: <a href="https://www.termsfeed.com/blog/cookies/">All About Cookies</a>.</p>
+        <p>We use both session and persistent Cookies for the purposes set out below:</p><br>
+        <ul>
+            <li>Necessary / Essential Cookies Type: Session Cookies Administered by: Us Purpose: These Cookies are
+                essential to provide You with services available through the Website and to enable You to use some of
+                its features. They help to authenticate users and prevent fraudulent use of user accounts. Without
+                these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to
+                provide You with those services.
+            </li>
+            <li>Cookies Policy / Notice Acceptance Cookies Type: Persistent Cookies Administered by: Us Purpose: These
+                Cookies identify if users have accepted the use of cookies on the Website.
+            </li>
+            <li>Functionality Cookies Type: Persistent Cookies Administered by: Us Purpose: These Cookies allow us to
+                remember choices You make when You use the Website, such as remembering your login details or
+                language preference. The purpose of these Cookies is to provide You with a more personal experience
+                and to avoid You having to re-enter your preferences every time You use the Website.
+            </li>
+        </ul>
+        <br>
+        <p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies
+            Policy.</p><br><br>
+        <h3 class="wp-block-heading">Use of Your Personal Data</h3><br>
+        <p>The Company may use Personal Data for the following purposes:</p><br>
+        <ul class="wp-block-list">
+            <li>To provide and maintain our Service, including to monitor the usage of our Service.</li>
+            <li>To manage Your Account: to manage Your registration as a user of the Service. The Personal Data You
+                provide can give You access to different functionalities of the Service that are available to You as a
+                registered user.
+            </li>
+            <li>For the performance of a contract: the development, compliance and undertaking of the purchase
+                contract for the products, items or services You have purchased or of any other contract with Us through
+                the Service.
+            </li>
+            <li>To contact You: To contact You by email, telephone calls, SMS, or other equivalent forms of
+                electronic communication, such as a mobile application’s push notifications regarding updates or
+                informative communications related to the functionalities, products or contracted services,
+                including the security updates, when necessary or reasonable for their implementation.
+            </li>
+            <li>To provide You with news, special offers and general information about other goods, services and events
+                which we offer that are similar to those that you have already purchased or inquired about unless You
+                have opted not to receive such information.
+            </li>
+            <li>To manage Your requests: To attend and manage Your requests to Us.</li>
+        </ul>
+        <br>
+        <p>We may share your personal information in the following situations:</p><br>
+        <ul class="wp-block-list">
+            <li>With Service Providers: We may share Your personal information with Service Providers to monitor and
+                analyze the use of our Service, to contact You.
+            </li>
+            <li>For Business transfers: We may share or transfer Your personal information in connection with, or during
+                negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of
+                our business to another company.
+            </li>
+            <li>With Affiliates: We may share Your information with Our affiliates, in which case we will require
+                those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other
+                subsidiaries, joint venture partners or other companies that We control or that are under common control
+                with Us.
+            </li>
+            <li>With Business partners: We may share Your information with Our business partners to offer You certain
+                products, services or promotions.
+            </li>
+            <li>With other users: when You share personal information or otherwise interact in the public areas with
+                other users, such information may be viewed by all users and may be publicly distributed outside. If
+                You interact with other users or register through a Third-Party Social Media Service, Your contacts
+                on the Third-Party Social Media Service may see Your name, profile, pictures and description of Your
+                activity. Similarly, other users will be able to view descriptions of Your activity, communicate with
+                You and view Your profile.
+            </li>
+        </ul>
+        <br><br>
+        <h3 class="wp-block-heading">Retention of Your Personal Data</h3><br>
+        <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in
+            this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our
+            legal obligations (for example, if we are required to retain your data to comply with applicable laws),
+            resolve disputes, and enforce our legal agreements and policies.</p>
+        <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for
+            a shorter period of time, except when this data is used to strengthen the security or to improve the
+            functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
+        </p><br><br>
+        <h3 class="wp-block-heading">Transfer of Your Personal Data</h3><br>
+        <p>Your information, including Personal Data, is processed at the Company’s operating offices and in any
+            other places where the parties involved in the processing are located. It means that this information may
+            be transferred to — and maintained on — computers located outside of Your state, province, country or other
+            governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+        <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your
+            agreement to that transfer.</p>
+        <p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in
+            accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization
+            or a country unless there are adequate controls in place including the security of Your data and </p>
+        <br><br>
+        <h2 class="wp-block-heading">Disclosure of Your Personal Data other personal information.</h2><br>
+        <h3 class="wp-block-heading">Business Transactions</h3><br>
+        <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred.
+            We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy
+            Policy.</p><br><br>
+        <h3 class="wp-block-heading">Law enforcement</h3><br>
+        <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so
+            by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p><br><br>
+        <h3 class="wp-block-heading">Other legal requirements</h3><br>
+        <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+        <br>
+        <ul class="wp-block-list">
+            <li>Comply with a legal obligation</li>
+            <li>Protect and defend the rights or property of the Company</li>
+            <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
+            <li>Protect the personal safety of Users of the Service or the public</li>
+            <li>Protect against legal liability</li>
+        </ul>
+        <br><br>
+        <h3 class="wp-block-heading">Security of Your Personal Data</h3><br>
+        <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over
+            the Internet, or method of electronic storage is 100% secure. While We strive to use commercially
+            acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p><br><br>
+        <h3 class="wp-block-heading">Children’s Privacy</h3><br>
+        <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable
+            information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your
+            child has provided Us with Personal Data, please contact Us. If We become aware that We have collected
+            Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to
+            remove that information from Our servers.</p>
+        <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires
+            consent from a parent, We may require Your parent’s consent before We collect and use that information.</p>
+        <br><br>
+        <h3 class="wp-block-heading">Links to Other Websites</h3><br>
+        <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party
+            link, You will be directed to that third party’s site. We strongly advise You to review the Privacy
+            Policy of every site You<br>visit.</p>
+        <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any
+            third party sites or services.</p><br><br>
+        <h3 class="wp-block-heading">Changes to this Privacy Policy</h3><br>
+        <p>We may update our Privacy Policy from time to time. We will notify You of any changes by posting the new
+            Privacy Policy on this page.</p>
+        <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming
+            effective and update the “Last updated” date at the top of this Privacy Policy.</p>
+        <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy
+            are effective when they are posted on this page.</p><br><br>
+        <h2 class="wp-block-heading">Contact Us</h2><br>
+        <p>If you have any questions about this Privacy Policy, You can contact us:</p><br>
+        <ul class="wp-block-list">
+            <li>By email: support@peak14.solutions</li>
+            <li>By phone number: +1 (720) 207-1646</li>
+        </ul>
+        <p></p>
+        <button id="close-privacy">Close</button>
     </div>
+</div>
 
-    <div class="popout-box" id="media-box" {% if section == 'media' %}style="display: block;"{% else %}style="display: none;"{% endif %}>
-        Our media and case studies...
-    </div>
 
+<script>
+    const privacyLink = document.getElementById('privacy-link');
+    const privacyOverlay = document.getElementById('privacy-overlay');
+    const closePrivacyButton = document.getElementById('close-privacy');
+
+    privacyLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        privacyOverlay.style.display = 'block';
+    });
+
+    closePrivacyButton.addEventListener('click', function () {
+        privacyOverlay.style.display = 'none';
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+const overlays = document.querySelectorAll('.resource-overlay');
+
+const closeButtons = document.querySelectorAll('.close-overlay');
+
+const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+
+
+
+// Function to get URL parameters
+
+function getQueryParam(param) {
+
+const urlParams = new URLSearchParams(window.location.search);
+
+return urlParams.get(param);
+
+}
+
+
+
+// Check the URL for the 'resource' parameter and show the corresponding overlay
+
+const resource = getQueryParam('resource');
+
+if (resource) {
+
+overlays.forEach(overlay => overlay.classList.remove('active'));
+
+
+
+const targetOverlay = document.getElementById(resource);
+
+if (targetOverlay) {
+
+targetOverlay.classList.add('active');
+
+}
+
+}
+
+
+
+// Handle internal navigation on resources.html
+
+dropdownLinks.forEach(link => {
+
+link.addEventListener('click', function (event) {
+
+const href = this.getAttribute('href');
+
+
+
+// If the link is an internal resource link, prevent default and show overlay
+
+if (href.includes('?resource=')) {
+
+event.preventDefault();
+
+const resourceId = href.split('=')[1];
+
+
+
+overlays.forEach(overlay => overlay.classList.remove('active'));
+
+
+
+const targetOverlay = document.getElementById(resourceId);
+
+if (targetOverlay) {
+
+targetOverlay.classList.add('active');
+
+window.history.pushState({}, '', href); //Update URL without reloading
+
+}
+
+}
+
+});
+
+});
+
+
+
+// Close button functionality
+
+closeButtons.forEach(button => {
+
+button.addEventListener('click', function () {
+
+overlays.forEach(overlay => overlay.classList.remove('active'));
+
+});
+
+});
+
+});
+
+</script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

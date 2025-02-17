@@ -152,7 +152,7 @@ nav {
   color: white; /* Keep text white */
   text-decoration: none;
   padding: 12px 20px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   position: relative;
 }
 
@@ -188,10 +188,199 @@ nav {
   color: white;
 }
 
+.dropdown-menu li {
+    margin-left: 0 !important; /* Resets the margin for dropdown <li>s */
+}
+
+
 /* Ensure dropdown stays above other elements */
 .nav-links {
   position: relative;
   z-index: 1000;
+}
+
+/**************/
+/* RESOURCES */
+/*************/
+  /* Initially hide all resource overlays */
+.resource-overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Center the overlay */
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Higher than dropdown */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.resource-overlay.active {
+    display: block;
+}
+
+.resource-content {
+    color: black;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.resource-content ul ul, li {
+    margin-left: 20px;
+}
+
+.close-overlay {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-overlay:hover {
+    color: #888;
+}
+
+.resource-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Text aligned left */
+  height: 100vh;
+  width: 100vw;
+  background: url('https://peak14.solutions/wp-content/uploads/2020/04/Mount_Meeker_and_Longs_Peak.jpg') no-repeat center center/cover;
+  background-position: 0% 25%; /* background image */
+  color: white;
+  padding-left: 5%;
+  position: relative;
+}
+
+/* Resource Content */
+.resource-container {
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+
+/* Resource Description */
+.resource-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-paragraph {
+    text-align: center; /* Center the introductory paragraphs */
+}
+
+.payment-methods-container {
+    display: flex;
+    justify-content: space-around; /* Distribute payment methods evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.payment-method {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center horizontally */
+    margin: 20px; /* Add some spacing between payment methods */
+    text-align: center; /* center text */
+}
+
+.payment-icon {
+    margin-bottom: 10px; /* Space below the icon */
+}
+
+.payment-link {
+    margin-top: 10px; /* Space above the link */
+}
+
+.sample-content-wrapper {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.sample-image {
+    max-width: 200px; /* Or your desired image width */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.sample-text {
+    flex: 1; /* Allow text to take up remaining space */
+}
+
+.sample-text h2 {
+    font-size: 1.5em; /* Larger font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.sample-quote {
+    font-size: 1em; /* Smaller font size */
+    font-style: italic;
+    margin-bottom: 5px; /* Space below the quote */
+}
+
+.sample-author {
+    font-size: 0.8em; /* Even smaller font size */
+    text-align: left; /* Align to the right */
+}
+
+/*********/
+/* MEDIA */
+/********/
+#media {
+    display: none;
+}
+
+#media.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#media .resource-content {
+    filter: blur(10px);
+    transition: filter 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#media .password-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1002;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translate(-50%, -70%);
+}
+
+#media.password-active .password-form {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+#media.password-correct .password-form {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+    pointer-events: none;
+}
+
+#media.password-correct .resource-content {
+    filter: none;
 }
 
 
@@ -399,15 +588,6 @@ nav {
 }
 
 
-/* Footer */
-footer {
-  background-color: #215A78;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-
 /*********************/
 /* ABOUT US SECTION */
 /*******************/
@@ -416,6 +596,7 @@ footer {
   background-color: #D3D3D3; /* Complementary gray */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   padding: 50px 0;
+  padding-bottom: 80px;
 }
 
 .team-carousel {
@@ -435,7 +616,8 @@ footer {
   position: relative;
   gap: 30px;
   width: 100%;
-  height: 250px;
+  height: 300px; /* 250px before */
+  margin-bottom: 30px;
 }
 
 .team-member {
@@ -467,6 +649,32 @@ footer {
 .team-name {
   font-weight: bold;
   margin-top: 10px;
+}
+
+.member-bio {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* for speech bubble effect */
+}
+
+
+
+#social-links {
+    margin-top: 10px;
+}
+
+#social-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#social-links img {
+    width: 30px;
+    height:30px;
 }
 
 .carousel-btn {
@@ -546,6 +754,73 @@ footer {
   margin: 0; /* Remove default h2 margins */
 }
 
+/**********/
+/* Footer */
+/*********/
+footer {
+  background-color: #215A78;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Align items to the start */
+    align-items: center;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left svg {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.footer-left a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-center {
+    margin-left: 275px;
+    text-align: center;
+}
+
+.footer-right {
+    margin-left: auto;
+    text-align: right;
+}
+
+
+/* Style the privacy policy overlay */
+    #privacy-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        display: none; /* Hidden by default */
+        z-index: 1002; /* Ensure it's on top */
+    }
+
+    #privacy-overlay .privacy-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 800px;
+        max-height: 600px; /* Set a maximum height */
+        overflow-y: auto; /* Add scroll if content is too long */
+    }
 
 /**************************/
 /* Responsive adjustments */
@@ -606,8 +881,11 @@ footer {
 
 
 
-
-.dark {
+.dark{
+    color: #4d4949;
+}
+.dark a {
+    text-decoration: none;
     color: #4d4949;
 }
 
