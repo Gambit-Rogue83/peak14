@@ -109,7 +109,9 @@ nav {
   transform: scaleX(1);
 }
 
-/* Dropdown container */
+/******************/
+/* NAVBAR Dropdwon */
+/*****************/
 .dropdown {
   position: relative;
   display: inline-block;
@@ -198,6 +200,75 @@ nav {
   position: relative;
   z-index: 1000;
 }
+
+/***********************/
+/* HELPFUL LINKS DROP */
+/*********************/
+.helpful-links-section {
+    width: 27%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Dropdown Styles */
+    .dropdown-container {
+        margin-bottom: 20px; /* Space between sections */
+        width: 100%;
+    }
+
+    .dropdown-header {
+        display: flex;
+        align-items: center; /* Vertically align items */
+        cursor: pointer;
+        padding: 10px;
+        background-color: #558B71; /* Teal Green */
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Smooth transition on hover */
+        width: 100%;
+    }
+
+    .dropdown-header:hover {
+        background-color: #215A78; /* Darker Blue on hover */
+    }
+
+    .dropdown-toggle {
+        margin-right: 10px;
+        font-size: 1.2em; /* Adjust plus/minus size */
+        transition: transform 0.3s ease; /* Smooth rotation */
+    }
+
+    .dropdown-content {
+        display: none; /* Initially hidden */
+        padding: 10px;
+        background-color: #f8f8f8; /* Light gray background */
+        border: 1px solid #ddd; /* Light gray border */
+        border-top: none; /* Remove top border */
+        border-radius: 0 0 5px 5px; /* Round only the bottom corners */
+    }
+
+    .dropdown-content a {
+        display: block; /* Make links stack vertically */
+        padding: 5px 0; /* Add some vertical padding */
+        color: #333; /* Dark gray text color */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        color: #215A78; /* Blue color on hover */
+    }
+
+    .dropdown-content ul {
+        list-style-type: disc; /* Use bullet points for lists*/
+        margin-left: 20px; /* Indent the list */
+        padding: 0;
+    }
+
+    /* Rotate the plus/minus icon on toggle */
+    .dropdown-toggle.active {
+        transform: rotate(90deg);
+    }
 
 /**************/
 /* RESOURCES */
@@ -330,57 +401,6 @@ nav {
 .sample-author {
     font-size: 0.8em; /* Even smaller font size */
     text-align: left; /* Align to the right */
-}
-
-/*********/
-/* MEDIA */
-/********/
-#media {
-    display: none;
-}
-
-#media.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#media .resource-content {
-    filter: blur(10px);
-    transition: filter 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#media .password-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1002;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 0;
-    transform: translate(-50%, -70%);
-}
-
-#media.password-active .password-form {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-}
-
-#media.password-correct .password-form {
-    opacity: 0;
-    transform: translate(-50%, -30%);
-    pointer-events: none;
-}
-
-#media.password-correct .resource-content {
-    filter: none;
 }
 
 
@@ -701,10 +721,12 @@ nav {
   background-position: center;
   background-color: rgba(162, 189, 180, 1);
   background-blend-mode: multiply;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column; /* Stack content vertically */
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .contact-form {
@@ -715,6 +737,7 @@ nav {
   max-width: 400px;
   width: 100%;
   text-align: center;
+  margin-bottom: 20px; /* Space between form and links */
 }
 
 .contact-form input, .contact-form textarea {

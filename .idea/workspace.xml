@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Contact Us, Footer (flushed), Logo Text, Active a-links">
-      <change afterPath="$PROJECT_DIR$/static/facebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/linkedin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/try.html" afterDir="false" />
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Team member page updated, privacy policy added, sample overlay published and styled,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/resources.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/resources.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/experiment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/experiment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/resources.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resources.html" afterDir="false" />
     </list>
@@ -44,15 +37,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nynys\PycharmProjects\peak14 webpage\static" />
@@ -108,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738880575937</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Team member page updated, privacy policy added, sample overlay published and styled,">
+      <option name="closed" value="true" />
+      <created>1739752606503</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739752606503</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +129,7 @@
     <MESSAGE value="Services polishing, Meet the Team" />
     <MESSAGE value="Meet the Team Carousel, Drop down menu," />
     <MESSAGE value="Contact Us, Footer (flushed), Logo Text, Active a-links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contact Us, Footer (flushed), Logo Text, Active a-links" />
+    <MESSAGE value="Team member page updated, privacy policy added, sample overlay published and styled," />
+    <option name="LAST_COMMIT_MESSAGE" value="Team member page updated, privacy policy added, sample overlay published and styled," />
   </component>
 </project>

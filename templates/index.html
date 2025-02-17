@@ -96,10 +96,9 @@
 
                         <!-- Dropdown Menu -->
                         <ul class="dropdown-menu">
-                            <li><a href="/resources.html?resource=samples">Samples</a></li>
-                            <li><a href="/resources.html?resource=filemaker">FileMaker</a></li>
+                            <li><a href="/resources.html?resource=samples">Testimonials</a></li>
+                            <li><a href="/resources.html?resource=filemaker">Helpful Links</a></li>
                             <li><a href="/resources.html?resource=payment">Payment Methods</a></li>
-                            <li><a href="/resources.html?resource=media">Media</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,20 +142,8 @@
         </div>
     </div>
 
-    <div class="arrow-container" id="scrollToTop" onclick="scrollToTop()">
-        <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <g data-name="Layer 2">
-                <g data-name="arrow-ios-upward">
-                    <rect height="24" opacity="0" transform="rotate(180 12 12)" width="24"></rect>
-                    <path d="M18 15a1 1 0 0 1-.64-.23L12 10.29l-5.37 4.32a1 1 0 0 1-1.41-.15 1 1 0 0 1 .15-1.41l6-4.83a1 1 0 0 1 1.27 0l6 5a1 1 0 0 1 .13 1.41A1 1 0 0 1 18 15z"></path>
-                </g>
-            </g>
-        </svg>
-    </div>
-
     <!---  FEATURES SECTION --->
     <div class="features-section" id="features">
-        <h2 class="section-title">Features with title</h2>
 
         <div class="features-row">
             <!-- Left Column -->
@@ -167,6 +154,18 @@
                     specific hurdles and reach your peak. Ready to find your solution?
                 </p>
                 <button class="btn primary-btn" onclick="scrollToSection('contact')">Get In Touch!</button>
+            </div>
+
+            <!-- Arrow Scroll -->
+            <div class="arrow-container" id="scrollToTop" onclick="scrollToTop()">
+                <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g data-name="Layer 2">
+                        <g data-name="arrow-ios-upward">
+                            <rect height="24" opacity="0" transform="rotate(180 12 12)" width="24"></rect>
+                            <path d="M18 15a1 1 0 0 1-.64-.23L12 10.29l-5.37 4.32a1 1 0 0 1-1.41-.15 1 1 0 0 1 .15-1.41l6-4.83a1 1 0 0 1 1.27 0l6 5a1 1 0 0 1 .13 1.41A1 1 0 0 1 18 15z"></path>
+                        </g>
+                    </g>
+                </svg>
             </div>
 
             <!-- Right Column -->
@@ -214,6 +213,24 @@
         </div>
     </div>
 
+    <!-- TESTIMONIAL SECTION -->
+    <section class="testimonial-section" style="background-color: #f0f5f3; padding: 50px;">
+        <div class="container" style="display: flex; align-items: center;">
+            <div class="sample-content-wrapper"><img class="sample-image" src="static/Sample1.jpg">
+                <div class="sample-text">
+                    <h2>Happy Salmon, Inc.</h2>
+                    <p class="sample-quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                        laborum."</p>
+                    <p class="sample-author"> -- John McClane -- </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="team-section">
         <h2>Meet the Team</h2>
@@ -227,12 +244,14 @@
                     <img alt="Tim Jerris" src="static/tim.jpg">
                     <p class="team-name">Tim Jerris</p>
                 </div>
-                <div class="team-member" data-bio="Jack's bio. He's a great designer!" data-facebook="jack_facebook_link"
+                <div class="team-member" data-bio="Jack's bio. He's a great designer!"
+                     data-facebook="jack_facebook_link"
                      data-linkedin="jack_linkedin_link" data-x="jack_x_link">
                     <img alt="Jack Watcher" src="static/jack.jpg">
                     <p class="team-name">Jack Watcher</p>
                 </div>
-                <div class="team-member" data-bio="Jane's bio. She's a marketing guru!" data-facebook="jane_facebook_link"
+                <div class="team-member" data-bio="Jane's bio. She's a marketing guru!"
+                     data-facebook="jane_facebook_link"
                      data-linkedin="jane_linkedin_link" data-x="jane_x_link">
                     <img alt="Jane Austin" src="static/jane.jpg">
                     <p class="team-name">Jane Austin</p>
@@ -246,6 +265,80 @@
             <p id="bio-text"></p>
             <div id="social-links">
 
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT SECTION -->
+    <section class="payment-section" style="background-color: #e3e8e5; padding: 50px;">
+        <div class="container" style="display: flex; justify-content: space-around;">
+            <div>
+                <div class="resource-content">
+                    <p class="intro-paragraph">Below are several easy ways to make payments to Peak 14 Solutions
+                        LLC.</p>
+                    <p class="intro-paragraph">Preferred payment methods are ACH Bank Transfer or Zelle.</p><br>
+
+                    <div class="payment-methods-container">
+                        <div class="payment-method">
+                            <h2>Zelle</h2>
+                            <figure>
+                                <a href="https://www.zellepay.com/" target="_blank">
+                                    <img alt="" class="payment-icon"
+                                         src="https://peak14.solutions/wp-content/uploads/2021/12/zelle.png"
+                                         width="100">
+                                </a>
+                            </figure>
+                            <p class="payment-link"><a href="https://www.zellepay.com/" target="_blank">Zelle Pay</a>
+                            </p>
+                            <p class="payment-info">Use paul@peak14.solutions</p>
+                        </div>
+
+                        <div class="payment-method">
+                            <h2>PayPal</h2>
+                            <figure>
+                                <a href="https://www.paypal.com/paypalme/pmccudden" target="_blank">
+                                    <img alt="PayPal Icon" class="payment-icon"
+                                         src="https://peak14.solutions/wp-content/uploads/2020/04/FAVPNG_paypal-logo-payment-system_Z4vDjLxC.png"
+                                         width="100">
+                                </a>
+                            </figure>
+                            <p class="payment-link"><a href="https://www.paypal.com/paypalme/peak14LLC" target="_blank">PayPal</a>
+                            </p>
+                            <p class="payment-info">General Request Link</p>
+                        </div>
+
+                        <div class="payment-method">
+                            <h2>Venmo</h2>
+                            <figure>
+                                <a href="https://venmo.com/code?user_id=2570153912958976893" target="_blank">
+                                    <img alt="Venmo Icon" class="payment-icon"
+                                         src="https://peak14.solutions/wp-content/uploads/2020/04/app-icon.original.png"
+                                         width="100">
+                                </a>
+                            </figure>
+                            <p class="payment-link"><a href="https://venmo.com/code?user_id=2570153912958976893"
+                                                       rel="noreferrer noopener" target="_blank">Venmo</a></p>
+                            <p class="payment-info">Profile Link</p>
+                        </div>
+
+                        <div class="payment-method">
+                            <h2>Check</h2>
+                            <figure>
+                                <a href="https://www.huntington.com/learn/checking-basics/how-to-write-a-check"
+                                   target="_blank">
+                                    <img alt="" class="payment-icon"
+                                         src="https://peak14.solutions/wp-content/uploads/2021/03/checkbook.png"
+                                         width="100">
+                                </a>
+                            </figure>
+                            <p class="payment-link"><a
+                                    href="https://www.huntington.com/learn/checking-basics/how-to-write-a-check"
+                                    target="_blank">Check</a>
+                            </p>
+                            <p class="payment-info">Use invoice information</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -264,7 +357,76 @@
                 <button type="submit">Send</button>
             </form>
         </div>
+        <!-- HELPFUL LINKS SECTION -->
+        <div class="helpful-links-section">
+            <div class="dropdown-container">
+                <div class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span class="dropdown-toggle">+</span>
+                    <h2>Asking Questions</h2>
+                </div>
+                <div class="dropdown-content">
+                    <a href="https://www.facebook.com/groups/filemakerdevs" target="_blank">
+                        FileMaker Pro Users/Developers (Facebook Group)
+                    </a>
+                    <ul>
+                        <li>Good for quick replies</li>
+                    </ul>
+                    <a href="http://community.claris.com/" target="_blank">
+                        Claris Community (online forum)
+                    </a>
+                    <ul>
+                        <li>Good for in-depth answers</li>
+                    </ul>
+                </div>
+
+
+                <div class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span class="dropdown-toggle">+</span>
+                    <h2>Learning Videos</h2>
+                </div>
+                <div class="dropdown-content">
+                    <a href="https://www.youtube.com/channel/UC92MpDPgdr-xEn3JRUAmZOQ" target="_blank">ISO FileMaker
+                        Magazine</a>
+                    <ul>
+                        <li>Great to learn intermediate materials</li>
+                    </ul>
+                    <a href="https://www.youtube.com/user/FileMakerVideos" target="_blank">FileMaker Training Videos</a>
+                    <ul>
+                        <li>Great to learn beginning materials</li>
+                    </ul>
+                    <a href="https://www.youtube.com/channel/UCXp4kolYmlCJacKmBd1zYoA" target="_blank">FileMaker
+                        Beginner</a>
+                    <ul>
+                        <li>Great to learn the basics of how FileMaker works</li>
+                    </ul>
+                    <a href="https://www.linkedin.com/learning/filemaker-relational-database-design" target="_blank">
+                        Relational Database Design Online Class
+                    </a>
+                    <ul>
+                        <li>Free for first month if you sign up</li>
+                        <li>Good for understanding how the relationship graph works and how to utilize it</li>
+                    </ul>
+                    <a href="https://www.linkedin.com/learning/filemaker-pro-essential-training-2" target="_blank">
+                        FileMaker Essential Online Class
+                    </a>
+                    <ul>
+                        <li>Free for first month if you sign up</li>
+                        <li>Good for a basic overview of FileMaker</li>
+                    </ul>
+                </div>
+
+
+                <div class="dropdown-header" onclick="toggleDropdown(this)">
+                    <span class="dropdown-toggle">+</span>
+                    <h2>Documentation</h2>
+                </div>
+                <div class="dropdown-content">
+                    <a href="https://help.claris.com/en/pro-help/content/index.html" target="_blank">Filemaker Docs</a>
+                </div>
+            </div>
+        </div>
     </section>
+
 
 </main>
 
@@ -529,6 +691,14 @@
 </div>
 
 
+<script>
+    function toggleDropdown(header) {
+        const content = header.nextElementSibling;
+        const toggleIcon = header.querySelector('.dropdown-toggle');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        toggleIcon.classList.toggle('active'); // Toggle plus/minus icon rotation
+    }
+</script>
 <script>
     const privacyLink = document.getElementById('privacy-link');
     const privacyOverlay = document.getElementById('privacy-overlay');
