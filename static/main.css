@@ -378,135 +378,64 @@ nav {
 .testimonial-section {
     background-color: #558B71;
     padding: 50px;
-    overflow: hidden;
-    display: flex; /* Enable flexbox for vertical alignment */
-    flex-direction: column; /* Stack heading and content */
-    align-items: center; /* Center horizontally */
+    text-align: center;
 }
-
-.testimonial-heading {
-    font-size: 40px;
+.testimonial-title {
+    color: white;
+    font-size: 24px;
     margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #215A78;
-    width: fit-content;
-    color: white; /* White text for heading */
 }
-
-.testimonial-container {
-    width: 80%;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
 .testimonial-slider {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    cursor: grab;
-}
-
-.testimonial-slider:active {
-    cursor: grabbing;
-}
-
-.testimonial-track {
-    display: flex;
-    transition: transform 0.3s ease;
-}
-
-.testimonial-slide {
-    min-width: calc(100% / 3); /* 3 cards visible at a time - adjust as needed */
-    scroll-snap-align: start;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.testimonial-card {
-    background-color: #ccdcd4;
-    border-radius: 24px;
-    padding: 20px;
-    height: 100%; /* Ensure card takes up full slide height*/
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack content vertically */
-}
-
-
-.testimonial-content {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Allow content to expand to fill card */
-    gap: 10px;
+    align-items: center;
+    position: relative;
+    cursor: grab;
+    max-width: 80vw;
+    margin: auto;
 }
-
+.slides {
+    display: flex;
+    transition: transform 0.3s ease-out;
+    cursor: grab;
+    width: max-content;
+    justify-content: center;
+}
+.testimonial-card {
+    min-width: 300px;
+    padding: 20px;
+    margin: 0 15px;
+    background-color: #ccdcd4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    user-select: none;
+}
+.testimonial-text {
+    font-style: italic;
+}
 .testimonial-name {
     font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center; /* Center the name */
+    margin-top: 10px;
 }
-
-.testimonial-quote {
-    flex-grow: 1; /* Allow quote to expand vertically */
-}
-
-.quote-icon {
-    font-size: 2em; /* Smaller quote icon */
-    color: #215A78;
-    margin-bottom: 5px;
-}
-
-
 .star-rating {
-    display: flex;
+    color: gold;
+    font-size: 20px;
 }
-
-.star {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}
-
-.star img {
-    width: 100%;
-    height: 100%;
-}
-
-/* Style for filled stars (no grayscale) */
-.star img {
-    filter: none; /* Make sure no filter is applied by default */
-}
-
-/* Style for empty stars (using JavaScript to add the class) */
-.star.empty img {
-    filter: grayscale(100%);
-    opacity: 0.5;
-}
-
-.star svg path {
-    fill: gold; /* Filled star color */
-}
-
-.star.empty svg path {
-    fill: lightgray; /* Empty star color */
-}
-
-.carousel-dots {
+.dot-track {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 15px;
 }
-
-.carousel-dots .dot {
-    width: 12px;
-    height: 12px;
+.dot {
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
+    background-color: grey;
     border-radius: 50%;
-    background-color: #ddd;
-    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
-.carousel-dots .dot.active {
+.dot.active {
     background-color: #215A78;
 }
 
