@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Testimonial Cards improved">
-      <change afterPath="$PROJECT_DIR$/templates/script.js" afterDir="false" />
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Testimonial Cards working on infinite loop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
@@ -134,7 +132,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740007281190</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Testimonial Cards working on infinite loop">
+      <option name="closed" value="true" />
+      <created>1740170865832</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740170865832</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +164,7 @@
     <MESSAGE value="Helpful Links dropdown list bottom of page" />
     <MESSAGE value="Testimonial Cards start" />
     <MESSAGE value="Testimonial Cards improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testimonial Cards improved" />
+    <MESSAGE value="Testimonial Cards working on infinite loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testimonial Cards working on infinite loop" />
   </component>
 </project>
