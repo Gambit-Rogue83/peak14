@@ -219,30 +219,52 @@
         <div class="testimonial-slider">
             <div class="slides">
                 <div class="testimonial-card">
+                    <p class="testimonial-name">- Sparkle -</p>
                     <p class="testimonial-text">“The staff are always super sweet and helpful. I really enjoy talking
                         with them.”</p>
-                    <p class="testimonial-name">- Glimmer</p>
                     <div class="star-rating">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
+                    <p class="testimonial-name">- Glimmer -</p>
                     <p class="testimonial-text">“The staff are always super sweet and helpful. I really enjoy talking
                         with them.”</p>
-                    <p class="testimonial-name">- Glimmer</p>
                     <div class="star-rating">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
+                    <p class="testimonial-name">- Katrina -</p>
                     <p class="testimonial-text">“Arcadia Counseling has showed up for our family time and time
                         again.”</p>
-                    <p class="testimonial-name">- Katrina</p>
                     <div class="star-rating">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
+                    <p class="testimonial-name">- Micah -</p>
                     <p class="testimonial-text">“This is one of the premier therapy offices in Utah County!”</p>
-                    <p class="testimonial-name">- Micah</p>
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-name">- Sparkle -</p>
+                    <p class="testimonial-text">“The staff are always super sweet and helpful. I really enjoy talking
+                        with them.”</p>
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-name">- Glimmer -</p>
+                    <p class="testimonial-text">“The staff are always super sweet and helpful. I really enjoy talking
+                        with them.”</p>
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-name">- Katrina -</p>
+                    <p class="testimonial-text">“Arcadia Counseling has showed up for our family time and time
+                        again.”</p>
+                    <div class="star-rating">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-name">- Micah -</p>
+                    <p class="testimonial-text">“This is one of the premier therapy offices in Utah County!”</p>
                     <div class="star-rating">★★★★★</div>
                 </div>
             </div>
-            <div class="dot-track"></div>
         </div>
     </section>
 
@@ -685,68 +707,6 @@
 
 
 <script>
-let isDragging = false;
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID;
-const slides = document.querySelector(".slides");
-const cards = document.querySelectorAll(".testimonial-card");
-const totalSlides = cards.length;
-const dotTrack = document.querySelector(".dot-track");
-let index = 0;
-
-for (let i = 0; i < totalSlides; i++) {
-    let dot = document.createElement("div");
-    dot.classList.add("dot");
-    if (i === 0) dot.classList.add("active");
-    dotTrack.appendChild(dot);
-}
-const dots = document.querySelectorAll(".dot");
-
-slides.addEventListener("mousedown", startDrag);
-slides.addEventListener("mouseup", endDrag);
-slides.addEventListener("mouseleave", endDrag);
-slides.addEventListener("mousemove", drag);
-slides.addEventListener("touchstart", startDrag);
-slides.addEventListener("touchend", endDrag);
-slides.addEventListener("touchmove", drag);
-
-function startDrag(event) {
-    isDragging = true;
-    startPos = getPositionX(event);
-    animationID = requestAnimationFrame(animation);
-    slides.style.transition = "none";
-    slides.style.cursor = "grabbing";
-}
-
-function endDrag() {
-    isDragging = false;
-    cancelAnimationFrame(animationID);
-    slides.style.cursor = "grab";
-    const movedBy = currentTranslate - prevTranslate;
-    prevTranslate = currentTranslate;
-    setPositionByIndex();
-    slides.style.transition = "transform 0.3s ease-out";
-}
-
-function drag(event) {
-    if (!isDragging) return;
-    const currentPosition = getPositionX(event);
-    currentTranslate = prevTranslate + (currentPosition - startPos) * 1.5;
-    slides.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-function getPositionX(event) {
-    return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
-}
-
-function setPositionByIndex() {
-    slides.style.transition = "transform 0.3s ease-out";
-    prevTranslate = currentTranslate;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index % dots.length].classList.add("active");
-}
 </script>
 <script>
     function toggleDropdown(header) {
@@ -837,6 +797,5 @@ function setPositionByIndex() {
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-<script src="static/js/script.js"></script>
 </body>
 </html>

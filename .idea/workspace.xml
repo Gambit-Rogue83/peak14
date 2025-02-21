@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Testimonial Cards start">
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Testimonial Cards improved">
+      <change afterPath="$PROJECT_DIR$/templates/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
@@ -47,8 +49,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nynys\PycharmProjects\peak14 webpage\static" />
       <recent name="C:\Users\nynys\PycharmProjects\peak14 webpage\templates" />
+      <recent name="C:\Users\nynys\PycharmProjects\peak14 webpage\static" />
       <recent name="C:\Users\nynys\PycharmProjects\peak14 webpage\scss" />
     </key>
   </component>
@@ -124,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740004884564</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Testimonial Cards improved">
+      <option name="closed" value="true" />
+      <created>1740007281190</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740007281190</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +157,7 @@
     <MESSAGE value="Team member page updated, privacy policy added, sample overlay published and styled," />
     <MESSAGE value="Helpful Links dropdown list bottom of page" />
     <MESSAGE value="Testimonial Cards start" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testimonial Cards start" />
+    <MESSAGE value="Testimonial Cards improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testimonial Cards improved" />
   </component>
 </project>
