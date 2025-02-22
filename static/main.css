@@ -429,8 +429,8 @@ nav {
 }
 
 .payment-card button {
-    background-color: #F8F9FA;
-    color: #1E3A5F;
+    background-color: #215A78;
+    color: white;
     border: none;
     padding: 10px 15px;
     font-size: 16px;
@@ -440,7 +440,7 @@ nav {
 }
 
 .payment-card button:hover {
-    background-color: #B0C4DE;
+    background-color: #558B71;
 }
 
 /* Preferred Banner */
