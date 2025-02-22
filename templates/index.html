@@ -270,36 +270,62 @@
     <section class="team-section">
         <h2>Meet the Team</h2>
 
-        <div class="team-carousel">
-            <button class="carousel-btn prev-btn" onclick="prevMember()">&lt;</button>
-
-            <div class="team-wrapper">
-                <div class="team-member active" data-bio="Tim's bio here. He loves coding and hiking!"
-                     data-facebook="tim_facebook_link" data-linkedin="tim_linkedin_link" data-x="tim_x_link">
+        <div class="team-wrapper">
+            <div class="team-member" data-bio="Tim's bio here. He loves coding and hiking!">
+                <div class="team-image">
                     <img alt="Tim Jerris" src="static/tim.jpg">
-                    <p class="team-name">Tim Jerris</p>
-                </div>
-                <div class="team-member" data-bio="Jack's bio. He's a great designer!"
-                     data-facebook="jack_facebook_link"
-                     data-linkedin="jack_linkedin_link" data-x="jack_x_link">
-                    <img alt="Jack Watcher" src="static/jack.jpg">
-                    <p class="team-name">Jack Watcher</p>
-                </div>
-                <div class="team-member" data-bio="Jane's bio. She's a marketing guru!"
-                     data-facebook="jane_facebook_link"
-                     data-linkedin="jane_linkedin_link" data-x="jane_x_link">
-                    <img alt="Jane Austin" src="static/jane.jpg">
-                    <p class="team-name">Jane Austin</p>
+                    <div class="name-plaque">
+                        <span>Tim Jerris</span>
+                        <div class="social-links">
+                            <a href="tim_x_link" target="_blank"><img alt="X" src="static/x.png"></a>
+                            <a href="tim_facebook_link" target="_blank"><img alt="Facebook"
+                                                                             src="static/facebook.png"></a>
+                            <a href="tim_linkedin_link" target="_blank"><img alt="LinkedIn"
+                                                                             src="static/linkedin.png"></a>
+                        </div>
+                    </div>
+                    <div class="bio-overlay">
+                        <p class="bio-text">Tim's bio here. He loves coding and hiking!</p>
+                    </div>
                 </div>
             </div>
 
-            <button class="carousel-btn next-btn" onclick="nextMember()">&gt;</button>
-        </div>
+            <div class="team-member" data-bio="Jack's bio. He's a great designer!">
+                <div class="team-image">
+                    <img alt="Jack Watcher" src="static/jack.jpg">
+                    <div class="name-plaque">
+                        <span>Jack Watcher</span>
+                        <div class="social-links">
+                            <a href="jack_x_link" target="_blank"><img alt="X" src="static/x.png"></a>
+                            <a href="jack_facebook_link" target="_blank"><img alt="Facebook"
+                                                                              src="static/facebook.png"></a>
+                            <a href="jack_linkedin_link" target="_blank"><img alt="LinkedIn"
+                                                                              src="static/linkedin.png"></a>
+                        </div>
+                    </div>
+                    <div class="bio-overlay">
+                        <p class="bio-text">Jack's bio. He's a great designer!</p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="member-bio">
-            <p id="bio-text"></p>
-            <div id="social-links">
-
+            <div class="team-member" data-bio="Jane's bio. She's a marketing guru!">
+                <div class="team-image">
+                    <img alt="Jane Austin" src="static/jane.jpg">
+                    <div class="name-plaque">
+                        <span>Jane Austin</span>
+                        <div class="social-links">
+                            <a href="jane_x_link" target="_blank"><img alt="X" src="static/x.png"></a>
+                            <a href="jane_facebook_link" target="_blank"><img alt="Facebook"
+                                                                              src="static/facebook.png"></a>
+                            <a href="jane_linkedin_link" target="_blank"><img alt="LinkedIn"
+                                                                              src="static/linkedin.png"></a>
+                        </div>
+                    </div>
+                    <div class="bio-overlay">
+                        <p class="bio-text">Jane's bio. She's a marketing guru!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -713,8 +739,6 @@
 
 
 <script>
-</script>
-<script>
     function toggleDropdown(header) {
         const content = header.nextElementSibling;
         const toggleIcon = header.querySelector('.dropdown-toggle');
@@ -755,50 +779,6 @@
         arrow.style.display = "none";
       }
     });
-</script>
-<script>
-    let currentIndex = 0;
-    const members = document.querySelectorAll(".team-member");
-    const bioText = document.getElementById("bio-text");
-    const socialLinks = document.getElementById("social-links");
-
-    function updateCarousel() {
-        members.forEach((member, index) => {
-            member.classList.toggle("active", index === currentIndex);
-        });
-
-        const activeMember = members[currentIndex];
-        bioText.textContent = activeMember.dataset.bio;
-
-        // Update social media links
-        socialLinks.innerHTML = ""; // Clear existing links
-        const platforms = ["x", "facebook", "linkedin"];
-        platforms.forEach(platform => {
-            const link = activeMember.dataset[platform];
-            if (link) {
-                const a = document.createElement("a");
-                a.href = link;
-                a.target = "_blank";
-                const img = document.createElement("img");
-                img.src = `static/${platform}.png`; // Assuming you have icons named x.png, facebook.png, etc.
-                img.alt = platform;
-                a.appendChild(img);
-                socialLinks.appendChild(a);
-            }
-        });
-    }
-
-    function prevMember() {
-        currentIndex = (currentIndex === 0) ? members.length - 1 : currentIndex - 1;
-        updateCarousel();
-    }
-
-    function nextMember() {
-        currentIndex = (currentIndex === members.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-    }
-
-    updateCarousel();
 </script>
 <script>
     document.getElementById("year").textContent = new Date().getFullYear();

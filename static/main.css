@@ -710,103 +710,142 @@ nav {
 /* ABOUT US SECTION */
 /*******************/
 .team-section {
-  text-align: center;
-  background-color: #D3D3D3; /* Complementary gray */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 50px 0;
-  padding-bottom: 80px;
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
 }
 
-.team-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding-top: 15px;
-  max-width: 800px;
-  margin: 0 auto;
+.team-section h2 {
+    margin-bottom: 20px;
 }
 
 .team-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 30px;
-  width: 100%;
-  height: 300px; /* 250px before */
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .team-member {
-  position: relative;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0.5;
-  transform: scale(0.8);
-}
-
-.team-member.active {
-  transform: scale(1.1);
-  opacity: 1;
-  z-index: 2;
-}
-
-.team-member img {
-  display: block;
-  width: 150px;
-  height: 200px;
-  border-radius: 10px;
-  border: 3px solid #558B71;
-  transition: border-color 0.3s ease;
-}
-
-.team-member.active img {
-  border-color: #215A78;
-}
-
-.team-name {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.member-bio {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
+    position: relative;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
     border-radius: 10px;
-    position: relative; /* for speech bubble effect */
+    transition: transform 0.3s ease-in-out;
 }
 
-
-
-#social-links {
-    margin-top: 10px;
+.team-member:hover {
+    transform: scale(1.05);
 }
 
-#social-links a {
+.team-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Name Plaque / Social Container */
+.name-plaque {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for background and color */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
+}
+
+/* Social Links in Name Plaque */
+.name-plaque .social-links {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Reduced gap */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 10px; /* Space between name and social links */
+}
+
+.social-links a {
     display: inline-block;
-    margin: 0 10px;
-}
-
-#social-links img {
     width: 30px;
-    height:30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
 }
 
-.carousel-btn {
-  background-color: #215A78;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 20px;
-  transition: background 0.3s ease;
+.social-links a:hover {
+    transform: scale(1.2);
 }
 
-.carousel-btn:hover {
-  background-color: #558B71;
+.social-links img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Bio Overlay */
+.bio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    z-index: 2; /* Ensure bio overlay is on top */
+}
+
+/* Show bio overlay and hide image on hover */
+.team-member:hover .bio-overlay {
+    opacity: 1;
+}
+
+.team-member:hover .team-image img {
+    opacity: 1;
+}
+
+/* Show Social Links and Hide Name When Bio is Active */
+.team-member:hover .name-plaque {
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+.team-member:hover .name-plaque span {
+    display: none;
+}
+
+.team-member:hover .name-plaque .social-links {
+    opacity: 1;
+    z-index: 3; /* Ensure social links are on top of bio */
+}
+
+.bio-text {
+    text-align: center; /* Center bio text */
 }
 
 
