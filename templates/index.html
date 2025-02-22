@@ -415,36 +415,27 @@
     </section>
 
     <!-- PAYMENT SECTION -->
-    <section class="payment-section" style="background-color: #D3D3D3; padding: 40px;">
-        <div class="container" style="text-align: center;">
+    <section class="payment-section">
+        <div class="container">
             <h2 class="payment-title">Easy & Flexible Ways to Pay</h2>
             <p class="payment-subtitle">Choose the method that works best for you!</p>
         </div>
 
-        <div class="container" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-
-            <!-- Check Payment -->
-            <div class="payment-card">
+        <div class="payment-grid">
+            <!-- Zelle Payment (Preferred) -->
+            <div class="payment-card preferred">
+                <div class="preferred-banner">Preferred</div>
                 <figure>
-                    <img alt="Check Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2021/03/checkbook.png"
+                    <img alt="Zelle Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2021/12/zelle.png"
                          width="80">
                 </figure>
-                <button onclick="window.open('https://www.huntington.com/learn/checking-basics/how-to-write-a-check', '_blank')">
-                    Pay by Check
-                </button>
-            </div>
-
-            <!-- Venmo Payment -->
-            <div class="payment-card">
-                <figure>
-                    <img alt="Venmo Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2020/04/app-icon.original.png"
-                         width="80">
-                </figure>
-                <button onclick="window.open('https://venmo.com/code?user_id=2570153912958976893', '_blank')">
-                    Pay with Venmo
-                </button>
+                <p class="payment-info">Use <strong>paul@peak14.solutions</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://www.zellepay.com/', '_blank')">
+                        Pay with Zelle
+                    </button>
+                </div>
             </div>
 
             <!-- PayPal Payment -->
@@ -454,24 +445,43 @@
                          src="https://peak14.solutions/wp-content/uploads/2020/04/FAVPNG_paypal-logo-payment-system_Z4vDjLxC.png"
                          width="80">
                 </figure>
-                <button onclick="window.open('https://www.paypal.com/paypalme/pmccudden', '_blank')">
-                    Pay with PayPal
-                </button>
+                <p class="payment-info">Use <strong>@Pmccudden</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://www.paypal.com/paypalme/pmccudden', '_blank')">
+                        Pay with PayPal
+                    </button>
+                </div>
             </div>
 
-            <!-- Zelle Payment (Preferred) -->
-            <div class="payment-card preferred">
-                <div class="preferred-banner">Preferred</div>
+            <!-- Venmo Payment -->
+            <div class="payment-card">
                 <figure>
-                    <img alt="Zelle Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2021/12/zelle.png"
+                    <img alt="Venmo Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2020/04/app-icon.original.png"
                          width="80">
                 </figure>
-                <button onclick="window.open('https://www.zellepay.com/', '_blank')">
-                    Pay with Zelle
-                </button>
+                <p class="payment-info">Use <strong>@Pmccudden</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://venmo.com/code?user_id=2570153912958976893', '_blank')">
+                        Pay with Venmo
+                    </button>
+                </div>
             </div>
 
+            <!-- Check Payment -->
+            <div class="payment-card">
+                <figure>
+                    <img alt="Check Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2021/03/checkbook.png"
+                         width="80">
+                </figure>
+                <p class="payment-info">Use <strong>invoice information</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://www.huntington.com/learn/checking-basics/how-to-write-a-check', '_blank')">
+                        Pay by Check
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 

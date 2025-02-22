@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Payment methods section updated">
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Meet the Team improved to hover:overlay">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
@@ -164,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740184617446</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Meet the Team improved to hover:overlay">
+      <option name="closed" value="true" />
+      <created>1740258246262</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740258246262</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +200,7 @@
     <MESSAGE value="Infinite Loop accomplished" />
     <MESSAGE value="Coloring Testimonials" />
     <MESSAGE value="Payment methods section updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Payment methods section updated" />
+    <MESSAGE value="Meet the Team improved to hover:overlay" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meet the Team improved to hover:overlay" />
   </component>
 </project>

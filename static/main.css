@@ -356,64 +356,111 @@ nav {
     text-align: center; /* Center the introductory paragraphs */
 }
 
+.payment-section {
+    background-color: #f5f5f5;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+}
+
 .payment-title {
-        font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: black; /* Soft white */
+}
 
-    .payment-subtitle {
-        font-size: 18px;
-        color: #555;
-        margin-bottom: 20px;
-    }
+.payment-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black;
+}
 
-    .payment-card {
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        text-align: center;
-        width: 200px; /* Increased size */
-        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease-in-out;
-        position: relative;
-    }
+/* Grid Layout */
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-    .payment-card:hover {
-        transform: scale(1.05);
-    }
+/* Payment Card Styling */
+.payment-card {
+    background-color: #e9eff2; /* Slightly lighter navy */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 230px; /* Fixed height for uniformity */
+}
 
-    .preferred-banner {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: #FFB100;
-        color: white;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
+.payment-card:hover {
+    transform: scale(1.05);
+}
 
-    .payment-card figure {
-        margin: 0;
-        padding-bottom: 15px;
-    }
+.payment-card figure {
+    margin: 0;
+}
 
-    .payment-card button {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        cursor: pointer;
-        width: 100%;
-        font-size: 16px;
-    }
+.payment-card img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
 
-    .payment-card button:hover {
-        background-color: #0056b3;
-    }
+
+.payment-info {
+    font-size: 14px;
+    color: black;
+    margin: 5px 0;
+}
+
+/* Button at Bottom */
+.button-container {
+    margin-top: auto; /* Push button to bottom */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.payment-card button {
+    background-color: #F8F9FA;
+    color: #1E3A5F;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.payment-card button:hover {
+    background-color: #B0C4DE;
+}
+
+/* Preferred Banner */
+.preferred {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: white; /* Slightly different navy */
+}
+
+.preferred-banner {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #FFD700; /* Gold */
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
 
 /****************/
 /* TESTIMONIAL */
@@ -511,7 +558,7 @@ nav {
   right: 5%;
   width: 50px;
   height: 50px;
-  background: gray;
+  background: #b3b3b3;
   color: white;
   border-radius: 50%;
   display: flex;
