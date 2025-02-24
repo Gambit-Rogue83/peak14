@@ -1,0 +1,35 @@
+/**************************/
+/* BELOW 1344px */
+/*************************/
+@media (max-width: 84em) {
+    /* Center Hero Content */
+    .hero-section {
+        justify-content: center; /* Center content */ /* Center text inside the content box */
+        padding-left: 0; /* Remove unnecessary left padding */
+    }
+
+    /* Stack Features Section */
+    .features-row {
+        flex-direction: column-reverse; /* Stack items vertically */
+        text-align: center; /* Center text */
+    }
+
+    /* Center Left Column */
+    .features-text {
+        text-align: center; /* Center heading and description */
+        margin-bottom: 1.5rem; /* Add spacing */
+        max-width: 40rem;
+    }
+
+    /* Center Right Column */
+    .features-grid {
+        justify-content: center;
+    }
+
+    /* Ensure Features are Centered */
+    .feature {
+        align-items: center; /* Center icons and text */
+        text-align: center; /* Align text */
+        max-width: 19rem;
+    }
+}
