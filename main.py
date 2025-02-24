@@ -1,10 +1,13 @@
 from flask import Flask, request, render_template
+import os
+from dotenv import load_dotenv
 import smtplib
 from email.message import EmailMessage
 
 
 app = Flask(__name__)
 
+load_dotenv()
 
 @app.route('/')
 def home():
@@ -20,10 +23,11 @@ def submit_form():
 
     email_body = f"From: {name} ({email})\n\n{message}"
 
-    # Send email
-    send_email(subject, email_body)
-
-    return "Message Sent Successfully!"
+    try:
+        send_email(subject, email_body, email)
+        return "Message Sent Successfully!", 200
+    except Exception as e:
+        return f"Error: Unable to send message at this time.", 500
 
 
 @app.route('/resources.html')
@@ -31,23 +35,24 @@ def resources():
     return render_template("resources.html")
 
 
-def send_email(subject, body):
-    sender_email = "your-email@gmail.com"
-    receiver_email = "your-email@gmail.com"
-    password = "your-email-password"
+def send_email(subject, body, sender_email):
+    email = os.getenv("EMAIL")
+    receiver_email = os.getenv("RECEIVER_EMAIL")
+    password = os.getenv("PASSWORD")
 
     msg = EmailMessage()
     msg.set_content(body)
     msg["Subject"] = subject
-    msg["From"] = sender_email
+    msg["From"] = email
     msg["To"] = receiver_email
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(sender_email, password)
-        server.send_message(msg)
-
-
-
+    try:
+        with smtplib.SMTP_SSL("smtp.mail.yahoo.com", 465) as server:
+            server.login(email, password)
+            server.send_message(msg)
+    except Exception as e:
+        print(f"SMTP Error: {e}")
+        raise
 
 
 if __name__ == '__main__':
