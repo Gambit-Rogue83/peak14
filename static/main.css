@@ -115,7 +115,7 @@ nav {
 }
 
 /******************/
-/* NAVBAR Dropdwon */
+/* NAVBAR Dropdown */
 /*****************/
 .dropdown {
     position: relative;
@@ -206,9 +206,9 @@ nav {
 /* HELPFUL LINKS DROP */
 /*********************/
 .helpful-links-section {
-    width: 27%;
-    max-width: 50rem;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 25rem;
+    margin: 1.25rem auto;
 }
 
 /* Dropdown Styles */
@@ -995,6 +995,8 @@ footer .container {
 }
 
 .footer-center {
+    display: flex;
+    gap: 0.35rem;
     text-align: center;
 }
 

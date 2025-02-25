@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Contact Form Flash message, Privacy Policy modernized,">
+    <list default="true" id="ae74a4d1-efec-4b86-ac6e-d697fa4b9e18" name="Changes" comment="Nav &amp; Footer container fixed, Media Query 1344px">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/main-queries.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/subdrop.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main-queries.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main-queries.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740421566214</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Nav &amp; Footer container fixed, Media Query 1344px">
+      <option name="closed" value="true" />
+      <created>1740437327029</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1740437327029</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,6 +239,7 @@
     <MESSAGE value="Payment Methods 2x2 grid." />
     <MESSAGE value="Payment Method colors" />
     <MESSAGE value="Contact Form Flash message, Privacy Policy modernized," />
-    <option name="LAST_COMMIT_MESSAGE" value="Contact Form Flash message, Privacy Policy modernized," />
+    <MESSAGE value="Nav &amp; Footer container fixed, Media Query 1344px" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nav &amp; Footer container fixed, Media Query 1344px" />
   </component>
 </project>
