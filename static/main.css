@@ -39,14 +39,6 @@ header {
 /******************/
 /* Navigation Bar */
 /*****************/
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Prevents overflow on small screens */
-    padding: 0 1.25rem;
-}
-
 /* Logo & Text Styling */
 .logo-container {
     display: flex;
@@ -71,6 +63,16 @@ nav {
     cursor: pointer;
     text-decoration: none;
 }
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Prevents overflow on small screens */
+    padding: 0 1.25rem;
+}
+
+
 
 /* Navigation Links */
 .nav-links {
@@ -212,12 +214,12 @@ nav {
 }
 
 /* Dropdown Styles */
-.dropdown-container {
+.helpful-dropdown-container {
     margin-bottom: 1.25rem; /* Space between sections */
     width: 100%;
 }
 
-.dropdown-header {
+.helpful-dropdown-header {
     display: flex;
     align-items: center; /* Vertically align items */
     cursor: pointer;
@@ -229,16 +231,16 @@ nav {
     width: 100%;
 }
 
-.dropdown-header:hover {
+.helpful-dropdown-header:hover {
     background-color: #215A78; /* Darker Blue on hover */
 }
 
-.dropdown-toggle {
+.helpful-dropdown-toggle {
     font-size: 1.2em; /* Adjust plus/minus size */
     transition: transform 0.3s ease; /* Smooth rotation */
 }
 
-.dropdown-content {
+.helpful-dropdown-content {
     display: none; /* Initially hidden */
     padding: 0.625rem;
     background-color: #f8f8f8; /* Light gray background */
@@ -247,7 +249,7 @@ nav {
     border-radius: 0 0 0.3125rem 0.3125rem; /* Round only the bottom corners */
 }
 
-.dropdown-content a {
+.helpful-dropdown-content a {
     display: block; /* Make links stack vertically */
     padding: 0.3125rem 0; /* Add some vertical padding */
     color: #333; /* Dark gray text color */
@@ -255,18 +257,18 @@ nav {
     transition: color 0.3s ease;
 }
 
-.dropdown-content a:hover {
+.helpful-dropdown-content a:hover {
     color: #215A78; /* Blue color on hover */
 }
 
-.dropdown-content ul {
+.helpful-dropdown-content ul {
     list-style-type: disc; /* Use bullet points for lists*/
     margin-left: 1.25rem; /* Indent the list */
     padding: 0;
 }
 
 /* Rotate the plus/minus icon on toggle */
-.dropdown-toggle.active {
+.helpful-dropdown-toggle.active {
     transform: rotate(90deg);
 }
 

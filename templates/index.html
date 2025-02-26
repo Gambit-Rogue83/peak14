@@ -126,6 +126,23 @@
                     Contact Us
                 </a>
             </div>
+
+            <!-- MOBILE MENU -->
+            <div class="mobile-menu-container">
+                <img class="menu-icon" onclick="toggleMobileMenu()" src="static/menu.png">
+                <div class="mobile-menu">
+                    <div class="mobile-menu-header">
+                        <span class="close-menu" onclick="toggleMobileMenu()">&times;</span>
+                    </div>
+                    <a href="javascript:void(0)" onclick="scrollToSection('features'); toggleMobileMenu()">Services</a>
+                    <a href="javascript:void(0)" onclick="scrollToSection('team'); toggleMobileMenu()">About</a>
+                    <a href="javascript:void(0)" onclick="scrollToSection('testimonial'); toggleMobileMenu()">Testimonials</a>
+                    <a href="javascript:void(0)" onclick="scrollToSection('helpful-links'); toggleMobileMenu()">Helpful
+                        Links</a>
+                    <a href="javascript:void(0)" onclick="scrollToSection('payment'); toggleMobileMenu()">Payment Methods</a>
+                    <a href="javascript:void(0)" onclick="scrollToSection('contact'); toggleMobileMenu()">Contact Us</a>
+                </div>
+            </div>
         </nav>
     </div>
 </header>
@@ -275,7 +292,7 @@
         <h2>Meet the Team</h2>
 
         <div class="team-wrapper">
-            <div class="team-member" data-bio="Tim's bio here. He loves coding and hiking!">
+            <div class="team-member active" data-bio="Tim's bio here. He loves coding and hiking!">
                 <div class="team-image">
                     <img alt="Tim Jerris" src="static/tim.jpg">
                     <div class="name-plaque">
@@ -332,6 +349,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- Navigation Arrows -->
+        <div class="team-nav">
+            <span id="prevArrow" class="nav-arrow disabled">&#8592;</span>
+            <span id="nextArrow" class="nav-arrow">&#8594;</span>
+        </div>
     </section>
 
     <!-- CONTACT US -->
@@ -351,12 +374,12 @@
         </div>
         <!-- HELPFUL LINKS SECTION -->
         <div class="helpful-links-section">
-            <div class="dropdown-container">
-                <div class="dropdown-header" onclick="toggleDropdown(this)">
-                    <span class="dropdown-toggle">+</span>
+            <div class="helpful-dropdown-container">
+                <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
+                    <span class="helpful-dropdown-toggle">+</span>
                     <h2>Forums</h2>
                 </div>
-                <div class="dropdown-content">
+                <div class="helpful-dropdown-content">
                     <a href="https://www.facebook.com/groups/filemakerdevs" target="_blank">
                         FileMaker Pro Users/Developers (Facebook Group)
                     </a>
@@ -372,11 +395,11 @@
                 </div>
 
 
-                <div class="dropdown-header" onclick="toggleDropdown(this)">
-                    <span class="dropdown-toggle">+</span>
+                <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
+                    <span class="helpful-dropdown-toggle">+</span>
                     <h2>Learning Videos</h2>
                 </div>
-                <div class="dropdown-content">
+                <div class="helpful-dropdown-content">
                     <a href="https://www.youtube.com/channel/UC92MpDPgdr-xEn3JRUAmZOQ" target="_blank">ISO FileMaker
                         Magazine</a>
                     <ul>
@@ -408,11 +431,11 @@
                 </div>
 
 
-                <div class="dropdown-header" onclick="toggleDropdown(this)">
-                    <span class="dropdown-toggle">+</span>
+                <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
+                    <span class="helpful-dropdown-toggle">+</span>
                     <h2>Documentation</h2>
                 </div>
-                <div class="dropdown-content">
+                <div class="helpful-dropdown-content">
                     <a href="https://help.claris.com/en/pro-help/content/index.html" target="_blank">Filemaker Docs</a>
                 </div>
             </div>
@@ -798,6 +821,63 @@
     </div>
 </div>
 
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const teamMembers = document.querySelectorAll(".team-member");
+    const prevArrow = document.getElementById("prevArrow");
+    const nextArrow = document.getElementById("nextArrow");
+    let currentIndex = 0;
+
+    function updateTeamView() {
+        if (window.innerWidth > 928) return; // 58em = 928px, only apply on smaller screens
+
+        // Hide all members
+        teamMembers.forEach(member => member.classList.remove("active"));
+
+        // Show the current team member
+        teamMembers[currentIndex].classList.add("active");
+
+        // Disable arrows at the start and end
+        prevArrow.classList.toggle("disabled", currentIndex === 0);
+        nextArrow.classList.toggle("disabled", currentIndex === teamMembers.length - 1);
+    }
+
+    prevArrow.addEventListener("click", function () {
+        if (currentIndex > 0 && window.innerWidth <= 928) {
+            currentIndex--;
+            updateTeamView();
+        }
+    });
+
+    nextArrow.addEventListener("click", function () {
+        if (currentIndex < teamMembers.length - 1 && window.innerWidth <= 928) {
+            currentIndex++;
+            updateTeamView();
+        }
+    });
+
+    // Run on window resize
+    window.addEventListener("resize", updateTeamView);
+
+    // Initialize view on page load
+    updateTeamView();
+});
+</script>
+<script>
+   function toggleMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
+}
+
+    function toggleHelpfulDropdown(header) {
+    const content = header.nextElementSibling;
+    const toggleIcon = header.querySelector('.helpful-dropdown-toggle');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    toggleIcon.classList.toggle('active');
+}
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
@@ -826,12 +906,7 @@
 });
 </script>
 <script>
-    function toggleDropdown(header) {
-        const content = header.nextElementSibling;
-        const toggleIcon = header.querySelector('.dropdown-toggle');
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        toggleIcon.classList.toggle('active'); // Toggle plus/minus icon rotation
-    }
+
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
