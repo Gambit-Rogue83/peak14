@@ -79,8 +79,7 @@
                 <!-- RESOURCES -->
                 <div class="nav-links">
                     <!-- RESOURCES -->
-                    <div class="dropdown">
-                        <a class="dropdown-toggle no-underline" href="#">
+                        <a href="javascript:void(0)" onclick="scrollToSection('testimonial')">
                             <svg fill="#ffffff" height="20px" stroke="#ffffff" stroke-width="0.08"
                                  viewBox="0 0 24 24" width="20px" xmlns="http://www.w3.org/2000/svg">
                                 <g stroke-width="0"></g>
@@ -92,19 +91,8 @@
                                     </g>
                                 </g>
                             </svg>
-                            Resources
+                            Testimonials
                         </a>
-
-                        <!-- Dropdown Menu -->
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)" onclick="scrollToSection('testimonial')">Testimonials</a>
-                            </li>
-                            <li><a href="javascript:void(0)" onclick="scrollToSection('helpful-links')">Helpful
-                                Links</a></li>
-                            <li><a href="javascript:void(0)" onclick="scrollToSection('payment')">Payment Methods</a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <!-- CONTACT US -->
                 <a href="javascript:void(0)" onclick="scrollToSection('contact')">
@@ -139,7 +127,8 @@
                     <a href="javascript:void(0)" onclick="scrollToSection('testimonial'); toggleMobileMenu()">Testimonials</a>
                     <a href="javascript:void(0)" onclick="scrollToSection('helpful-links'); toggleMobileMenu()">Helpful
                         Links</a>
-                    <a href="javascript:void(0)" onclick="scrollToSection('payment'); toggleMobileMenu()">Payment Methods</a>
+                    <a href="javascript:void(0)" onclick="scrollToSection('payment'); toggleMobileMenu()">Payment
+                        Methods</a>
                     <a href="javascript:void(0)" onclick="scrollToSection('contact'); toggleMobileMenu()">Contact Us</a>
                 </div>
             </div>
@@ -352,8 +341,8 @@
 
         <!-- Navigation Arrows -->
         <div class="team-nav">
-            <span id="prevArrow" class="nav-arrow disabled">&#8592;</span>
-            <span id="nextArrow" class="nav-arrow">&#8594;</span>
+            <span class="nav-arrow disabled" id="prevArrow">&#8592;</span>
+            <span class="nav-arrow" id="nextArrow">&#8594;</span>
         </div>
     </section>
 
@@ -372,146 +361,10 @@
                 <button type="submit">Send</button>
             </form>
         </div>
-        <!-- HELPFUL LINKS SECTION -->
-        <div class="helpful-links-section">
-            <div class="helpful-dropdown-container">
-                <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
-                    <span class="helpful-dropdown-toggle">+</span>
-                    <h2>Forums</h2>
-                </div>
-                <div class="helpful-dropdown-content">
-                    <a href="https://www.facebook.com/groups/filemakerdevs" target="_blank">
-                        FileMaker Pro Users/Developers (Facebook Group)
-                    </a>
-                    <ul>
-                        <li>Good for quick replies</li>
-                    </ul>
-                    <a href="http://community.claris.com/" target="_blank">
-                        Claris Community (online forum)
-                    </a>
-                    <ul>
-                        <li>Good for in-depth answers</li>
-                    </ul>
-                </div>
-
-
-                <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
-                    <span class="helpful-dropdown-toggle">+</span>
-                    <h2>Learning Videos</h2>
-                </div>
-                <div class="helpful-dropdown-content">
-                    <a href="https://www.youtube.com/channel/UC92MpDPgdr-xEn3JRUAmZOQ" target="_blank">ISO FileMaker
-                        Magazine</a>
-                    <ul>
-                        <li>Great to learn intermediate materials</li>
-                    </ul>
-                    <a href="https://www.youtube.com/user/FileMakerVideos" target="_blank">FileMaker Training Videos</a>
-                    <ul>
-                        <li>Great to learn beginning materials</li>
-                    </ul>
-                    <a href="https://www.youtube.com/channel/UCXp4kolYmlCJacKmBd1zYoA" target="_blank">FileMaker
-                        Beginner</a>
-                    <ul>
-                        <li>Great to learn the basics of how FileMaker works</li>
-                    </ul>
-                    <a href="https://www.linkedin.com/learning/filemaker-relational-database-design" target="_blank">
-                        Relational Database Design Online Class
-                    </a>
-                    <ul>
-                        <li>Free for first month if you sign up</li>
-                        <li>Good for understanding how the relationship graph works and how to utilize it</li>
-                    </ul>
-                    <a href="https://www.linkedin.com/learning/filemaker-pro-essential-training-2" target="_blank">
-                        FileMaker Essential Online Class
-                    </a>
-                    <ul>
-                        <li>Free for first month if you sign up</li>
-                        <li>Good for a basic overview of FileMaker</li>
-                    </ul>
-                </div>
-
-
-                <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
-                    <span class="helpful-dropdown-toggle">+</span>
-                    <h2>Documentation</h2>
-                </div>
-                <div class="helpful-dropdown-content">
-                    <a href="https://help.claris.com/en/pro-help/content/index.html" target="_blank">Filemaker Docs</a>
-                </div>
-            </div>
+        <div class="hanging-sign">
+            <p> Make Payments: <a href="/payment" target="_blank">www.peak14.net/payment</a>
+            </p>
         </div>
-    </section>
-
-    <!-- PAYMENT SECTION -->
-    <section class="payment-section">
-        <div class="container">
-            <h2 class="payment-title">Easy & Flexible Ways to Pay</h2>
-            <p class="payment-subtitle">Choose the method that works best for you!</p>
-        </div>
-
-        <div class="payment-grid">
-            <!-- Zelle Payment (Preferred) -->
-            <div class="payment-card preferred">
-                <div class="preferred-banner">Preferred</div>
-                <figure>
-                    <img alt="Zelle Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2021/12/zelle.png"
-                         width="80">
-                </figure>
-                <p class="payment-info">Use <strong>paul@peak14.solutions</strong></p>
-                <div class="button-container">
-                    <button onclick="window.open('https://www.zellepay.com/', '_blank')">
-                        Pay with Zelle
-                    </button>
-                </div>
-            </div>
-
-            <!-- PayPal Payment -->
-            <div class="payment-card">
-                <figure>
-                    <img alt="PayPal Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2020/04/FAVPNG_paypal-logo-payment-system_Z4vDjLxC.png"
-                         width="80">
-                </figure>
-                <p class="payment-info">Use <strong>@Pmccudden</strong></p>
-                <div class="button-container">
-                    <button onclick="window.open('https://www.paypal.com/paypalme/pmccudden', '_blank')">
-                        Pay with PayPal
-                    </button>
-                </div>
-            </div>
-
-            <!-- Venmo Payment -->
-            <div class="payment-card">
-                <figure>
-                    <img alt="Venmo Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2020/04/app-icon.original.png"
-                         width="80">
-                </figure>
-                <p class="payment-info">Use <strong>@Pmccudden</strong></p>
-                <div class="button-container">
-                    <button onclick="window.open('https://venmo.com/code?user_id=2570153912958976893', '_blank')">
-                        Pay with Venmo
-                    </button>
-                </div>
-            </div>
-
-            <!-- Check Payment -->
-            <div class="payment-card">
-                <figure>
-                    <img alt="Check Icon" class="payment-icon"
-                         src="https://peak14.solutions/wp-content/uploads/2021/03/checkbook.png"
-                         width="80">
-                </figure>
-                <p class="payment-info">Use <strong>invoice information</strong></p>
-                <div class="button-container">
-                    <button onclick="window.open('https://www.huntington.com/learn/checking-basics/how-to-write-a-check', '_blank')">
-                        Pay by Check
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </main>
 
@@ -865,18 +718,18 @@
 });
 </script>
 <script>
-   function toggleMobileMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    mobileMenu.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-}
+    function toggleMobileMenu() {
+     const mobileMenu = document.querySelector('.mobile-menu');
+     mobileMenu.classList.toggle('active');
+     document.body.classList.toggle('no-scroll');
+ }
 
-    function toggleHelpfulDropdown(header) {
-    const content = header.nextElementSibling;
-    const toggleIcon = header.querySelector('.helpful-dropdown-toggle');
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    toggleIcon.classList.toggle('active');
-}
+     function toggleHelpfulDropdown(header) {
+     const content = header.nextElementSibling;
+     const toggleIcon = header.querySelector('.helpful-dropdown-toggle');
+     content.style.display = content.style.display === 'block' ? 'none' : 'block';
+     toggleIcon.classList.toggle('active');
+ }
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {

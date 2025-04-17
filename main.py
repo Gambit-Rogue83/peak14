@@ -30,10 +30,14 @@ def submit_form():
         return f"Error: Unable to send message at this time.", 500
 
 
-@app.route('/resources.html')
+@app.route('/resources')
 def resources():
     return render_template("resources.html")
 
+
+@app.route('/payment')
+def payment():
+    return render_template('payment.html')
 
 def send_email(subject, body, sender_email):
     email = os.getenv("EMAIL")

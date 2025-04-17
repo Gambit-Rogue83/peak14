@@ -25,9 +25,6 @@ body {
     color: #333;
 }
 
-/* Container for consistent width */
-.container {
-}
 
 /* Header Styling */
 header {
@@ -908,7 +905,6 @@ nav {
     max-width: 25rem;
     width: 100%;
     text-align: center;
-    margin-bottom: 1.25rem; /* Space between form and links */
 }
 
 .contact-form input, .contact-form textarea {
@@ -952,6 +948,55 @@ nav {
     font-size: 1rem;
     font-weight: bold;
     margin-top: -2.5rem;
+}
+
+.hanging-sign {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 25rem;
+    width: 100%;
+    margin: 1rem auto 0; /* Centers below the form */
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.95); /* Subtle white background */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border: 2px solid #558B71; /* Matches the theme */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Hanging effect: Two small lines (ropes) above the sign */
+.hanging-sign::before,
+.hanging-sign::after {
+    content: "";
+    position: absolute;
+    top: -16px;
+    width: 5px;
+    height: 16px;
+    background: #558B71;
+    border-radius: 5px;
+}
+
+.hanging-sign::before {
+    left: 15%;
+}
+
+.hanging-sign::after {
+    right: 15%;
+}
+
+/* The clickable payment link */
+.hanging-sign a {
+    text-decoration: none;
+    color: #215A78; /* Dark blue */
+    transition: color 0.3s ease-in-out;
+}
+
+.hanging-sign a:hover {
+    color: #446b58; /* Slightly different green on hover */
 }
 
 /**********/
