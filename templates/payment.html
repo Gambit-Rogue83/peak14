@@ -2,80 +2,236 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Payment Options</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet"/>
+    <style>
+        .credit-card-container {
+            width: 3.15in; /* Standard credit card width */
+            height: 2.625in; /* Standard credit card height */
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Hide content overflow when tabs change */
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 0 solid #ccc;
+            margin-bottom: -1px; /* Slight overlap for a seamless connection */
+        }
+
+        .tab {
+            position: relative;
+            padding: 8px 16.8px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            font-size: 0.9em;
+            z-index: 1;
+        }
+
+        .tab.active {
+            background-color: #558B71;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            padding: 15px;
+            display: none; /* Initially hide all content */
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .payment-icon {
+            display: block;
+            margin: 10px auto;
+        }
+
+        .payment-info {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container button {
+            background-color: #558B71;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #45705d;
+        }
+    </style>
 </head>
 <body>
 
-<!-- HELPFUL LINKS SECTION -->
-<div class="helpful-links-section">
-    <div class="helpful-dropdown-container">
-        <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
-            <span class="helpful-dropdown-toggle">+</span>
-            <h2>Forums</h2>
-        </div>
-        <div class="helpful-dropdown-content">
-            <a href="https://www.facebook.com/groups/filemakerdevs" target="_blank">
-                FileMaker Pro Users/Developers (Facebook Group)
-            </a>
-            <ul>
-                <li>Good for quick replies</li>
-            </ul>
-            <a href="http://community.claris.com/" target="_blank">
-                Claris Community (online forum)
-            </a>
-            <ul>
-                <li>Good for in-depth answers</li>
-            </ul>
+<header>
+    <div>
+        <nav>
+            <!-- LOGO -->
+            <div class="logo-container">
+                <a class="logo" href="/">
+                    <img alt="Logo" src="{{ url_for('static', filename='Large Logo 1 white.png') }}"/>
+                </a>
+                <a class="branding" href="/">
+                    <span>PEAK 14</span>
+                    <span>SOLUTIONS</span>
+                </a>
+            </div>
+
+            <!-- NAVLINKS -->
+            <div class="nav-links">
+                <!-- SERVICES -->
+                <a href="javascript:void(0)" onclick="scrollToSection('features')">
+                    <svg
+                            fill="#ffffff"
+                            height="20px"
+                            stroke="#ffffff"
+                            stroke-width="0.08"
+                            viewBox="0 0 24 24"
+                            width="20px"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g stroke-width="0"></g>
+                        <g stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g>
+                            <g>
+                                <path
+                                        d="M19,24H5v-2h2v-2H0V0h24v20h-7v2h2V24z M9,22h6v-2H9V22z M17,18h5V2H2v16H17z M13,16h-2v-2.1c-0.4-0.1-0.7-0.2-1-0.4L8.5,15l-1.4-1.4l1.5-1.5c-0.2-0.3-0.3-0.7-0.4-1H6v-2h2.1c0.1-0.4,0.2-0.7,0.4-1L7,6.6l1.4-1.4l1.5,1.5c0.3-0.2,0.7-0.3,1-0.4V4h2v2.1c0.4,0.1,0.7,0.2,1,0.4L15.4,5l1.4,1.4L15.4,8c0.2,0.3,0.3,0.7,0.4,1H18v2h-2.1c-0.1,0.4-0.2,0.7-0.4,1l1.5,1.5l-1.4,1.4L14,13.4c-0.3,0.2-0.7,0.3-1,0.4C13,13.8,13,16,13,16z M12,8c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2s2-0.9,2-2S13.1,8,12,8z"
+                                ></path>
+                            </g>
+                        </g>
+                    </svg>
+                    Home
+                </a>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="hero-section" style="justify-content: center">
+    <div>
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('zelle')">Zelle</div>
+            <div class="tab" onclick="showTab('paypal')">Paypal</div>
+            <div class="tab" onclick="showTab('venmo')">Venmo</div>
+            <div class="tab" onclick="showTab('check')">Check</div>
         </div>
 
-
-        <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
-            <span class="helpful-dropdown-toggle">+</span>
-            <h2>Learning Videos</h2>
-        </div>
-        <div class="helpful-dropdown-content">
-            <a href="https://www.youtube.com/channel/UC92MpDPgdr-xEn3JRUAmZOQ" target="_blank">ISO FileMaker
-                Magazine</a>
-            <ul>
-                <li>Great to learn intermediate materials</li>
-            </ul>
-            <a href="https://www.youtube.com/user/FileMakerVideos" target="_blank">FileMaker Training Videos</a>
-            <ul>
-                <li>Great to learn beginning materials</li>
-            </ul>
-            <a href="https://www.youtube.com/channel/UCXp4kolYmlCJacKmBd1zYoA" target="_blank">FileMaker
-                Beginner</a>
-            <ul>
-                <li>Great to learn the basics of how FileMaker works</li>
-            </ul>
-            <a href="https://www.linkedin.com/learning/filemaker-relational-database-design" target="_blank">
-                Relational Database Design Online Class
-            </a>
-            <ul>
-                <li>Free for first month if you sign up</li>
-                <li>Good for understanding how the relationship graph works and how to utilize it</li>
-            </ul>
-            <a href="https://www.linkedin.com/learning/filemaker-pro-essential-training-2" target="_blank">
-                FileMaker Essential Online Class
-            </a>
-            <ul>
-                <li>Free for first month if you sign up</li>
-                <li>Good for a basic overview of FileMaker</li>
-            </ul>
-        </div>
+        <div class="credit-card-container">
+            <div class="tab-content active" id="zelle">
+                <figure>
+                    <img alt="Zelle Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2021/12/zelle.png"
+                         width="80">
+                </figure>
+                <p class="payment-info">Use <strong>paul@peak14.solutions</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://www.zellepay.com/', '_blank')">
+                        Pay with Zelle
+                    </button>
+                </div>
+            </div>
 
 
-        <div class="helpful-dropdown-header" onclick="toggleHelpfulDropdown(this)">
-            <span class="helpful-dropdown-toggle">+</span>
-            <h2>Documentation</h2>
-        </div>
-        <div class="helpful-dropdown-content">
-            <a href="https://help.claris.com/en/pro-help/content/index.html" target="_blank">Filemaker Docs</a>
+            <div class="tab-content" id="paypal">
+                <figure>
+                    <img alt="PayPal Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2020/04/FAVPNG_paypal-logo-payment-system_Z4vDjLxC.png"
+                         width="80">
+                </figure>
+                <p class="payment-info">Use <strong>@peak14LLC</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://www.paypal.com/paypalme/pmccudden', '_blank')">
+                        Pay with PayPal
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="tab-content" id="venmo">
+                <figure>
+                    <img alt="Venmo Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2020/04/app-icon.original.png"
+                         width="80">
+                </figure>
+                <p class="payment-info">Use <strong>@Pmccudden</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://venmo.com/code?user_id=2570153912958976893', '_blank')">
+                        Pay with Venmo
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="tab-content" id="check">
+                <figure>
+                    <img alt="Check Icon" class="payment-icon"
+                         src="https://peak14.solutions/wp-content/uploads/2021/03/checkbook.png"
+                         width="80">
+                </figure>
+                <p class="payment-info">Use <strong>invoice information</strong></p>
+                <div class="button-container">
+                    <button onclick="window.open('https://www.huntington.com/learn/checking-basics/how-to-write-a-check', '_blank')">
+                        Pay by Check
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-</section>
 
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+            </div>
+            <div class="footer-center">
+                <p>&copy; <span id="year"></span> Peak 14 Solutions. All Rights Reserved.</p>
+            </div>
+            <div class="footer-right">
+                <p>1906 Dorset Dr.<br>
+                    Fort Collins, CO 80526</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+    function showTab(tabId) {
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    }
+</script>
 </body>
 </html>
