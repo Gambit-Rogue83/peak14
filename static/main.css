@@ -25,7 +25,6 @@ body {
     color: #333;
 }
 
-
 /* Header Styling */
 header {
     background-color: #215A78; /* Dark background */
@@ -66,10 +65,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Prevents overflow on small screens */
-    padding: 0 1.25rem;
+    padding: 0 3.25rem;
 }
-
-
 
 /* Navigation Links */
 .nav-links {
@@ -111,343 +108,6 @@ nav {
 
 .nav-links a:hover::after {
     transform: scaleX(1);
-}
-
-/******************/
-/* NAVBAR Dropdown */
-/*****************/
-.dropdown {
-    position: relative;
-}
-
-/* Dropdown menu styling */
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #215A78; /* Dark blue background */
-    border-radius: 0.3125rem;
-    padding: 0; /* Remove extra padding to fix gaps */
-    display: none;
-    flex-direction: column;
-    width: 13.75rem;
-    box-shadow: 0.125rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5); /* Adds depth */
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    opacity: 0;
-    z-index: 10;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Dropdown items */
-.dropdown-menu li {
-    list-style: none;
-}
-
-/* Styling for dropdown links */
-.dropdown-menu a {
-    display: flex;
-    align-items: center;
-    color: white; /* Keep text white */
-    text-decoration: none;
-    padding: 0.75rem 1.25rem;
-    transition: background-color 0.3s ease;
-}
-
-/* Remove underline animation from Resources link & dropdown items */
-.no-underline::after,
-.dropdown-menu a::after {
-    display: none !important;
-}
-
-/* Arrow, shifting effect & green background on hover */
-.dropdown-menu a:hover {
-    padding-left: 1.875rem; /* Moves text to the right */
-    background-color: #558B71; /* Background turns green */
-}
-
-/* Ensure first and last items fully turn green */
-.dropdown-menu li:first-child a:hover {
-    border-top-left-radius: 0.3125rem;
-    border-top-right-radius: 0.3125rem;
-}
-
-.dropdown-menu li:last-child a:hover {
-    border-bottom-left-radius: 0.3125rem;
-    border-bottom-right-radius: 0.3125rem;
-}
-
-/* Arrow stays white */
-.dropdown-menu a:hover::before {
-    content: "➤";
-    position: absolute;
-    left: 0.625rem;
-    font-size: 0.875rem;
-    color: white;
-}
-
-.dropdown-menu li {
-    margin-left: 0 !important; /* Resets the margin for dropdown <li>s */
-}
-
-/* Ensure dropdown stays above other elements */
-.nav-links {
-    position: relative;
-    z-index: 1000;
-}
-
-/***********************/
-/* HELPFUL LINKS DROP */
-/*********************/
-.helpful-links-section {
-    width: 100%;
-    max-width: 25rem;
-    margin: 1.25rem auto;
-}
-
-/* Dropdown Styles */
-.helpful-dropdown-container {
-    margin-bottom: 1.25rem; /* Space between sections */
-    width: 100%;
-}
-
-.helpful-dropdown-header {
-    display: flex;
-    align-items: center; /* Vertically align items */
-    cursor: pointer;
-    padding: 0.625rem;
-    background-color: #558B71; /* Teal Green */
-    color: white;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-    width: 100%;
-}
-
-.helpful-dropdown-header:hover {
-    background-color: #215A78; /* Darker Blue on hover */
-}
-
-.helpful-dropdown-toggle {
-    font-size: 1.2em; /* Adjust plus/minus size */
-    transition: transform 0.3s ease; /* Smooth rotation */
-}
-
-.helpful-dropdown-content {
-    display: none; /* Initially hidden */
-    padding: 0.625rem;
-    background-color: #f8f8f8; /* Light gray background */
-    border: 0.625rem solid #ddd; /* Light gray border */
-    border-top: none; /* Remove top border */
-    border-radius: 0 0 0.3125rem 0.3125rem; /* Round only the bottom corners */
-}
-
-.helpful-dropdown-content a {
-    display: block; /* Make links stack vertically */
-    padding: 0.3125rem 0; /* Add some vertical padding */
-    color: #333; /* Dark gray text color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.helpful-dropdown-content a:hover {
-    color: #215A78; /* Blue color on hover */
-}
-
-.helpful-dropdown-content ul {
-    list-style-type: disc; /* Use bullet points for lists*/
-    margin-left: 1.25rem; /* Indent the list */
-    padding: 0;
-}
-
-/* Rotate the plus/minus icon on toggle */
-.helpful-dropdown-toggle.active {
-    transform: rotate(90deg);
-}
-
-/**************/
-/* RESOURCES */
-/*************/
-  /* Initially hide all resource overlays */
-.resource-overlay {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /*Center the overlay */
-    width: 80%;
-    max-height: 80%;
-    overflow-y: auto;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1001; /* Higher than dropdown */
-    border-radius: 10px;
-    padding: 20px;
-}
-
-.resource-overlay.active {
-    display: block;
-}
-
-.resource-content {
-    color: black;
-    padding: 20px;
-    overflow-y: auto;
-    max-height: 70vh;
-}
-
-.resource-content ul ul, li {
-    margin-left: 20px;
-}
-
-.close-overlay {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    color: #333;
-    cursor: pointer;
-}
-
-.close-overlay:hover {
-    color: #888;
-}
-
-.resource-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Text aligned left */
-    height: 100vh;
-    width: 100vw;
-    background: url('https://peak14.solutions/wp-content/uploads/2020/04/Mount_Meeker_and_Longs_Peak.jpg') no-repeat center center/cover;
-    background-position: 0% 25%; /* background image */
-    color: white;
-    padding-left: 5%;
-    position: relative;
-}
-
-/* Resource Content */
-.resource-container {
-    max-width: 500px;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-
-/* Resource Description */
-.resource-description {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.intro-paragraph {
-    text-align: center; /* Center the introductory paragraphs */
-}
-
-.payment-section {
-    background-color: #f5f5f5;
-    padding: 2.5rem;
-    text-align: center;
-    color: #fff;
-}
-
-.payment-title {
-    font-size: 1.75rem;
-    margin-bottom: 0.625rem;
-    color: black; /* Soft white */
-}
-
-.payment-subtitle {
-    font-size: 1.125rem;
-    margin-bottom: 1.25rem;
-    color: black;
-}
-
-/* Grid Layout */
-.payment-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 1.25rem;
-    max-width: 37.5rem;
-    margin: 0 auto;
-}
-
-/* Payment Card Styling */
-.payment-card {
-    background-color: #e9eff2; /* Slightly lighter navy */
-    padding: 1.25rem;
-    border-radius: 0.625rem;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 14.375rem; /* Fixed height for uniformity */
-}
-
-.payment-card figure {
-    margin: 0;
-}
-
-.payment-card img {
-    width: 3.75rem;
-    height: auto;
-    margin-bottom: 0.625rem;
-}
-
-.payment-info {
-    font-size: 0.875rem;
-    color: black;
-    margin: 0.3125rem 0;
-}
-
-/* Button at Bottom */
-.button-container {
-    margin-top: auto; /* Push button to bottom */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.payment-card button {
-    background-color: #215A78;
-    color: white;
-    border: none;
-    padding: 0.625rem 0.9375rem;
-    font-size: 1rem;
-    border-radius: 0.3125rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.payment-card button:hover {
-    background-color: #558B71;
-}
-
-/* Preferred Banner */
-.preferred {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    background-color: white; /* Slightly different navy */
-}
-
-.preferred-banner {
-    position: absolute;
-    top: -0.625rem;
-    left: -0.625rem;
-    background-color: #FFD700; /* Gold */
-    color: #000;
-    font-weight: bold;
-    padding: 0.3125rem 0.625rem;
-    font-size: 0.875rem;
-    border-radius: 0.3125rem;
 }
 
 /****************/
@@ -950,55 +610,6 @@ nav {
     margin-top: -2.5rem;
 }
 
-.hanging-sign {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 25rem;
-    width: 100%;
-    margin: 1rem auto 0; /* Centers below the form */
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.95); /* Subtle white background */
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    border: 2px solid #558B71; /* Matches the theme */
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-/* Hanging effect: Two small lines (ropes) above the sign */
-.hanging-sign::before,
-.hanging-sign::after {
-    content: "";
-    position: absolute;
-    top: -16px;
-    width: 5px;
-    height: 16px;
-    background: #558B71;
-    border-radius: 5px;
-}
-
-.hanging-sign::before {
-    left: 15%;
-}
-
-.hanging-sign::after {
-    right: 15%;
-}
-
-/* The clickable payment link */
-.hanging-sign a {
-    text-decoration: none;
-    color: #215A78; /* Dark blue */
-    transition: color 0.3s ease-in-out;
-}
-
-.hanging-sign a:hover {
-    color: #446b58; /* Slightly different green on hover */
-}
-
 /**********/
 /* Footer */
 /*********/
@@ -1043,6 +654,7 @@ footer .container {
 
 .footer-center {
     display: flex;
+    flex-direction: column;
     gap: 0.35rem;
     text-align: center;
 }
@@ -1110,8 +722,6 @@ footer .container {
     background: #555;
 }
 
-
-
 .dark{
     color: #4d4949;
 }
@@ -1119,4 +729,3 @@ footer .container {
     text-decoration: none;
     color: #4d4949;
 }
-

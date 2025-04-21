@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 load_dotenv()
 
+
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -38,6 +39,7 @@ def resources():
 @app.route('/payment')
 def payment():
     return render_template('payment.html')
+
 
 def send_email(subject, body, sender_email):
     email = os.getenv("EMAIL")
